@@ -1,5 +1,5 @@
 <%= link_to 'Home', root_path %>
-<h2>Create new user</h2>
+<h2>Edit user</h2>
 <%= form_for :user, url: user_index_path do |f| %>
   <p>
     <%= f.label :name %><br>
@@ -30,5 +30,5 @@
     <%= f.submit %>
   </p>
 <% end %>
-
+<%= link_to 'Back', user_index_path %><br><br>
 <%= link_to 'Users List', user_index_path %>
