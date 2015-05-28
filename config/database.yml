@@ -1,0 +1,8 @@
+development:
+ adapter: mysql2
+ encoding: utf8
+ database: library
+ username: root
+ password: qburst
+ host: localhost
+ port: 3306
