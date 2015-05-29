@@ -1,6 +1,7 @@
 class UserController < ApplicationController
 	def index
 		@users = User.all
+
 	end
 	
  	def show
@@ -27,7 +28,6 @@ class UserController < ApplicationController
   end
  	
 	def update
-    puts "inside update"
   	@user = User.find(params[:id])
  		if @user.update(user_params)
     	redirect_to @user
