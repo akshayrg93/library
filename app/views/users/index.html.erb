@@ -23,7 +23,7 @@
       <td><%= link_to 'Destroy', user_path(user), 
       method: :delete,
       data: { confirm: 'Are you sure?' } %></td>
-      <td><%= link_to 'Get a Book', 'books/show_book_list' %></td>
+      <td><%= link_to 'Get a Book', book_path(book)  %></td>
     </tr>
   <% end %>
 </table>

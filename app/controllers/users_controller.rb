@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show    
+  def show  
+    @selected_user = User.find(params[:id])  
   end
 
   def new
