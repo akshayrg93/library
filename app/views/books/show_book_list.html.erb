@@ -1,0 +1,24 @@
+<h1>Books List</h1>
+ 
+<table border ="1">
+  <tr>
+    <th>Name</th>
+    <th>Author</th>
+    <th>Language</th>
+    <th>Details</th>
+  </tr>
+ 
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.author %></td>
+      <td><%= book.language %></td>
+      <td><%= book.details %></td>
+      <td><%= link_to 'Show', book_path(book) %></td>
+      <td><%= link_to 'Get it', books_path(book), method: get_book, data: {notice: You took the book} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>
+
