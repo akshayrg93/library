@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show  
-    @selected_user = User.find(params[:id])  
+      
   end
 
   def new
@@ -35,6 +35,15 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to users_path
+  end
+
+  def get_book
+     selected_user = session[:selected_user]
+     @book = Book.find(params[:id])
+     @user = User.find(selected_user)
+     @book.update_attributes(:user_id => session[:selected_user])
+     @user.update_attributes(:book_name => @book.name)
+     redirect_to root_path
   end
 
   private

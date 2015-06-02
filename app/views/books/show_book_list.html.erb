@@ -15,7 +15,7 @@
       <td><%= book.language %></td>
       <td><%= book.details %></td>
       <td><%= link_to 'Show', book_path(book) %></td>
-      <td><%= link_to 'Get it', books_path(book), method: get_book, data: {notice: You took the book} %></td>
+      <td><%= link_to 'Get it', user_get_book_path(book) %></td>
     </tr>
   <% end %>
 </table>
