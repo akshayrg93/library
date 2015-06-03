@@ -43,13 +43,18 @@ class UsersController < ApplicationController
     selected_user = session[:selected_user]
     @book = Book.find(params[:id])
     @user = User.find(selected_user)
-    @book.update_attributes(:user_id => session[:selected_user])
-    @user.update_attributes(:book_name => @book.name)
-    redirect_to root_path
+
+    if @user.book_count >= 3
+      redirect_to user_path(@user), :flash => { :failure => "You cannot take more than 3 books" }
+    else
+      @book.update_attributes(:user_id => session[:selected_user])
+      @user.update_attributes(:book_name => @book.name, :book_count => @user.book_count + 1)
+      redirect_to user_path(@user), :flash => { :success => "You got the book" }
+    end
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit(:name, :address, :email, :phone, :state, :country)
   end
