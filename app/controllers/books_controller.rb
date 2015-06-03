@@ -1,11 +1,12 @@
 class BooksController < ApplicationController
   before_filter :find_book, only: [:show, :edit, :update, :destroy, :get_books]
+  
   def index
     @books = Book.all
   end
 
   def show  
-
+  
   end
 
   def new
@@ -22,6 +23,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -38,15 +40,11 @@ class BooksController < ApplicationController
   end
 
   def show_book_list
-     @user = User.find(params[:id])
-     session[:selected_user] = @user.id
+    @user = User.find(params[:id])
+    session[:selected_user] = @user.id
+    @books = Book.where(user_id: nil )
+  end
 
-     @books = Book.where(user_id: nil )
-      
-    
-
-
-   end
   private
 
   def book_params

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :find_user, only: [:show, :edit, :update, :destroy]
+  
   def index
     @users = User.all
   end
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -38,15 +40,16 @@ class UsersController < ApplicationController
   end
 
   def get_book
-     selected_user = session[:selected_user]
-     @book = Book.find(params[:id])
-     @user = User.find(selected_user)
-     @book.update_attributes(:user_id => session[:selected_user])
-     @user.update_attributes(:book_name => @book.name)
-     redirect_to root_path
+    selected_user = session[:selected_user]
+    @book = Book.find(params[:id])
+    @user = User.find(selected_user)
+    @book.update_attributes(:user_id => session[:selected_user])
+    @user.update_attributes(:book_name => @book.name)
+    redirect_to root_path
   end
 
   private
+  
   def user_params
     params.require(:user).permit(:name, :address, :email, :phone, :state, :country)
   end
