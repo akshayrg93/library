@@ -1,28 +1,40 @@
 <h1>Books List</h1>
- 
-<table border ="1">
+<div class = "datagrid">
+<table>
+  <thead>
   <tr>
     <th>Name</th>
     <th>Author</th>
     <th>Language</th>
     <th>Details</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Remove</th>
   </tr>
- 
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="7">
+        <div id="no-paging">&nbsp;</div>
+    </tr>
+  </tfoot>
+
   <% @books.each do |book| %>
+  <tbody>
     <tr>
       <td><%= book.name %></td>
       <td><%= book.author %></td>
       <td><%= book.language %></td>
       <td><%= book.details %></td>
-      <td><%= link_to 'Show', book_path(book) %></td>
-      <td><%= link_to 'Edit', edit_book_path(book) %></td>
-      <td><%= link_to 'Remove', book_path(book), 
-      method: :delete,
-      data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Show', book_path(book)%></td>
+      <td><%= link_to 'Edit', edit_book_path(book)%></td>
+      <td><%= link_to 'Destroy', book_path(book), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  <% end %>
+    
+    </tbody>
+    <% end %>
 </table>
+</div>
 
-<%= link_to 'New book', new_book_path %><br>
-<%= link_to 'Home', root_path %>
-
+<%= link_to 'New book', new_book_path, :class => "middle" %><br>
+<%= link_to 'Home', root_path, :class => "middle" %>

@@ -1,24 +1,15 @@
-<h2>Book Details</h2>
+<h1>Book Details</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
- 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+<div class="form_label">
+  Name    : <%=  @book.name %><br>
 
-<p>
-  <strong>Language:</strong>
-  <%= @book.language %>
-</p>
+  Author : <%= @book.author %><br>
 
-<p>
-  <strong>Details:</strong>
-  <%= @book.details%>
-</p>
+  Language   : <%= @book.language %><br>
 
-<%= link_to 'Edit', edit_book_path(@book) %><br>
-<%= link_to 'Back', books_path %>
+  Details: <%= @book.details %><br>
+
+</div>
+
+<%= link_to 'Edit', edit_book_path(@book), :class => "middle" %><br>
+<%= link_to 'Back', books_path, :class => "middle" %>

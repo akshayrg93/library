@@ -1,37 +1,21 @@
 <h1>User Details</h1>
 
-<h3><font color="green"><%= flash[:success] %></font></h3>
-<h3><font color="red"><%= flash[:failure] %></font></h3>
+<h2><font color="green"><%= flash[:success] %></font></h3>
+<h2><font color="red"><%= flash[:failure] %></font></h3>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
- 
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+<div class="form_label">
+  Name    : <%=  @user.name %><br>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  Address : <%= @user.address %><br>
 
-<p>
-  <strong>Phone no:</strong>
-  <%= @user.phone %>
-</p>
+  Email   : <%= @user.email %><br>
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
+  Phone no: <%= @user.phone %><br>
 
-<p>
-  <strong>Country:</strong>
-  <%= @user.country %>
-</p>
+  State   : <%= @user.state %><br>
 
-<%= link_to 'Edit', edit_user_path(@user) %><br>
-<%= link_to 'Back', users_path %>
+  Country : <%= @user.country %><br>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user), :class => "middle" %><br>
+<%= link_to 'Back', users_path, :class => "middle" %>

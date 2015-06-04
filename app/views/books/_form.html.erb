@@ -1,26 +1,29 @@
-  <%= link_to 'Home', root_path %>
+  
   <%= form_for @book do |f| %>
     <p>
-      <%= f.label :name %><br>
+      <%= f.label :name, class: 'form_label' %><br>
+      <%= f.text_field :name, class: 'form_field' %>
     </p>
 
     <p>
-      <%= f.label :author %><br>
-      <%= f.text_field :author %>
+      <%= f.label :author, class: 'form_label' %><br>
+      <%= f.text_field :author, class: 'form_field' %>
     </p>
 
     <p>
-      <%= f.label :language %><br>
-      <%= f.text_field :language %>
+      <%= f.label :language, class: 'form_label' %><br>
+      <%= f.text_field :language, class: 'form_field' %>
     </p> 
 
     <p>
-      <%= f.label :details %><br>
-      <%= f.text_area :details %>
+      <%= f.label :details, class: 'form_label' %><br>
+      <%= f.text_area :details, class: 'form_field' %>
     </p>
 
     <p>
-      <%= f.submit %>
+      <%= f.submit :class => 'sub_button' %>
     </p>
  <% end %>
+
+ <%= link_to 'Home', root_path, :class => "middle" %><br>
  
