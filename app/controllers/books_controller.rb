@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  layout "books"
+  layout "application"
   before_filter :find_book, only: [:show, :edit, :update, :destroy, :get_books]
   
   def index

@@ -17,7 +17,7 @@ h1 {
   align:center;
 }
 
-a:link {
+a.middle:link {
     display: block;
     font-weight: bold;
     background-color: white;

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "users"
+  layout "application"
   before_filter :find_user, only: [:show, :edit, :update, :destroy]
   
   def index
