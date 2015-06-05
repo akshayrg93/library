@@ -3,7 +3,17 @@ class UsersController < ApplicationController
   before_filter :find_user, only: [:show, :edit, :update, :destroy]
   
   def index
-    @users = User.all
+    if params[:sort] == "asc"
+      @users = User.order("name ASC") 
+    elsif params[:sort] == "desc"
+      @users = User.order("name DESC")
+    elsif params[:sort] == "country_asc"
+      @users = User.order("country ASC")
+    elsif params[:sort] == "country_desc"
+      @users = User.order("country DESC")
+    else
+      @users = User.order("created_at DESC")
+    end  
   end
 
   def show  

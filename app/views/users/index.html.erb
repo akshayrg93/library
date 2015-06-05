@@ -3,12 +3,14 @@
 <table>
   <thead>
   <tr>
-    <th>Name</th>
+    <th>Name <%= link_to 'Sort-ASC', users_path(:sort => "asc"), :class => "small" %>
+             <%= link_to 'Sort-DESC', users_path(:sort => "desc"), :class => "small" %> </th>
     <th>Addres</th>
     <th>Email</th>
     <th>Phone</th>
     <th>State</th>
-    <th>Country</th>
+    <th>Country <%= link_to 'Sort-ASC', users_path(:sort => "country_asc"), :class => "small" %>
+             <%= link_to 'Sort-DESC', users_path(:sort => "country_desc"), :class => "small" %></th>
     <th>Show</th>
     <th>Edit</th>
     <th>Destroy</th>
