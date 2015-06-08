@@ -11,10 +11,7 @@
       <%= f.text_area :address, class: 'form_field' %>
     </p>
 
-    <p>
-      <%= f.label :email, class: 'form_label' %>
-      <%= f.text_field :email, class: 'form_field'%>
-    </p> 
+
 
     <p>
       <%= f.label :phone, class: 'form_label' %> 
@@ -29,6 +26,21 @@
     <p>
       <%= f.label :country, class: 'form_label' %> 
       <%= f.collection_select(:country, Country.all, :name, :name) %>
+    </p>
+    
+    <p>
+      <%= f.label :email, class: 'form_label' %>
+      <%= f.text_field :email, class: 'form_field'%>
+    </p> 
+
+    <p>
+      <%= f.label :password, class: 'form_label' %>
+      <%= f.password_field :password, class: 'form_field'%>
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation, class: 'form_label' %>
+      <%= f.password_field :password_confirmation, class: 'form_field'%>
     </p>
 
     <p>

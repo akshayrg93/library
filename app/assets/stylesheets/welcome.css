@@ -34,4 +34,6 @@ a:hover {
     background-color: #F4A460;
 }
 
-
+div#nav {
+    display: -webkit-box;
+}

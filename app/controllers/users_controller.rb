@@ -16,8 +16,7 @@ class UsersController < ApplicationController
     end  
   end
 
-  def show  
-      
+  def show     
   end
 
   def new
@@ -27,14 +26,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to(:users, :notice => 'Registration successfull.')
     else
-      render 'new'
-    end 
+      render :action => "new"
+    end
   end
 
   def edit
-
   end
 
   def update
@@ -67,11 +65,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :email, :phone, :state, :country)
+    params.require(:user).permit(:name, :address, :email, :phone, :state, :country, :password, :password_confirmation)
   end
 
   def find_user
     @user = User.find(params[:id])
   end
-
 end

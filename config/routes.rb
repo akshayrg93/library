@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :users
   resources :books
+  resources :user_sessions
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
+  root 'home#index'
+  match 'login' => 'user_sessions#new', :as => :login, via: [:get, :post]
+  match 'logout' => 'user_sessions#destroy', :as => :logout, via: [:get, :post]
   # Example of regular route:
   get 'users/get_book/:id' => 'users#get_book', as: 'user_get_book'
   get 'books/show_book_list/:id' => 'books#show_book_list', as: 'show_available_books'
