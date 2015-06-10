@@ -2,4 +2,4 @@
 <h2><font color="green"><%= flash[:notice] %></font></h2>
 <%= render 'form' %>
 
-<%= link_to 'Users List', users_path, :class => "middle" %>
+<%= link_to 'Back', user_path(current_user), :class => "middle" %>

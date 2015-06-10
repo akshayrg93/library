@@ -22,3 +22,4 @@ class CreateBooks < ActiveRecord::Migration
     end
   end
 end
+

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
+
   layout "application"
-  before_filter :find_user, only: [:show, :edit, :update, :destroy]
+
+  before_filter :find_user, only: [:show, :destroy]
+  before_filter :require_user, only: [:show, :edit, :update, :get_book]
+  before_filter :require_no_user, only: [:new, :create]
   
   def index
     if params[:sort] == "asc"
@@ -26,16 +30,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to(:users, :notice => 'Registration successfull.')
+      redirect_to(user_path(@user), :notice => 'Registration successfull.')
     else
       render :action => "new"
     end
   end
 
   def edit
+    @user = current_user
   end
 
   def update
+    @user = current_user
     if @user.update(user_params)
       redirect_to @user
     else

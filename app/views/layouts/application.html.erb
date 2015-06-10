@@ -11,14 +11,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
 	<% if current_user %>  
-    <%= link_to "Edit profile", edit_user_path(:current) %>  
+    <div class = "profile"><%= "Signed in as #{current_user.email}" %></div>
+    <%= link_to "Edit profile", edit_user_path(:current) %>     
     <%= link_to "Logout", logout_path %>  
   <% else %>  
-    <%= link_to "Register", new_user_path %>  
+    <%= link_to "Register", new_user_path %> | 
     <%= link_to "Log in", login_path %>  
   <% end %> 
-
+</nav>
 <%= yield %>
 
 </body>

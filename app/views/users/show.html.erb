@@ -2,8 +2,8 @@
 
 <h2><font color="green"><%= flash[:success] %></font></h2>
 <h2><font color="red"><%= flash[:failure] %></font></h2>
+<div class = "user_details">
 
-<div class="form_label">
   Name    : <%=  @user.name %><br>
 
   Address : <%= @user.address %><br>
@@ -15,7 +15,7 @@
   State   : <%= @user.state %><br>
 
   Country : <%= @user.country %><br>
+
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user), :class => "middle" %><br>
-<%= link_to 'Back', users_path, :class => "middle" %>
+<br><%= link_to 'Books List', show_available_books_path, :class => "middle" %>

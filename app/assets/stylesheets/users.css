@@ -127,3 +127,20 @@ a.small:link {
   background-color: red;
   display: table;
 }
+
+div.profile {
+  color: white;
+  float: none; 
+  width: 50%; 
+  display: block;
+  font-weight: bold;
+}
+
+div.user_details {
+  color: white;
+  float: none; 
+  width: 20%; 
+  display: block;
+  font-weight: bold;
+  margin: 0px auto;
+}

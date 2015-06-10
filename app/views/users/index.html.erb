@@ -15,12 +15,11 @@
     <th>Show</th>
     <th>Edit</th>
     <th>Destroy</th>
-    <th>Get a book</th>
   </tr>
   </thead>
   <tfoot>
     <tr>
-      <td colspan="10">
+      <td colspan="9">
         <div id="no-paging">&nbsp;</div>
     </tr>
   </tfoot>
@@ -39,7 +38,6 @@
       <td><%= link_to 'Destroy', user_path(user), 
       method: :delete,
       data: { confirm: 'Are you sure?' }%></td>
-      <td><%= link_to 'Get a Book', show_available_books_path(user)%></td>
     </tr>
     <% end %>
   </tbody>
