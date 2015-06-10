@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   layout "application"
   before_filter :find_book, only: [:show, :edit, :update, :destroy, :get_books]
-  
+  before_filter :require_admin, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  before_filter :require_user, only: [:show_book_list]
   def index
     @books = Book.all
   end

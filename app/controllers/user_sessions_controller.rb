@@ -12,9 +12,14 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])  
     if @user_session.save
       current_user = UserSession.find.user
-      flash[:win] = "Successfully logged in." 
-      #puts "......................."
-      redirect_to user_path(current_user) 
+      flash[:win] = "Successfully logged in."
+      if @user_session.user.role
+        redirect_to admin_home_path 
+      else
+        redirect_to user_path(current_user)
+      end
+      #puts "................", @user_session.user.role.to_yaml 
+       
     else 
       flash[:fail] = "Invalid username or password"
       render :action => 'new'    

@@ -12,14 +12,12 @@
     <th>State</th>
     <th>Country <%= link_to 'Sort-ASC', users_path(:sort => "country_asc"), :class => "small" %>
              <%= link_to 'Sort-DESC', users_path(:sort => "country_desc"), :class => "small" %></th>
-    <th>Show</th>
-    <th>Edit</th>
     <th>Destroy</th>
   </tr>
   </thead>
   <tfoot>
     <tr>
-      <td colspan="9">
+      <td colspan="7">
         <div id="no-paging">&nbsp;</div>
     </tr>
   </tfoot>
@@ -33,8 +31,6 @@
       <td><%= user.phone %></td>
       <td><%= user.state %></td>
       <td><%= user.country %></td>
-      <td><%= link_to 'Show', user_path(user)%></td>
-      <td><%= link_to 'Edit', edit_user_path(user)%></td>
       <td><%= link_to 'Destroy', user_path(user), 
       method: :delete,
       data: { confirm: 'Are you sure?' }%></td>
@@ -44,5 +40,5 @@
 </table>
 </div>
 
-<%= link_to 'New user', new_user_path, :class => "middle" %><br>
-<%= link_to 'Home', root_path, :class => "middle" %>
+
+<%= link_to 'Home', admin_home_path, :class => "middle" %>

@@ -10,7 +10,6 @@
     <th>Author</th>
     <th>Language</th>
     <th>Details</th>
-    <th>Show</th>
     <th>Get it</th>
   </tr>
   </thead>
@@ -28,7 +27,6 @@
       <td><%= book.author %></td>
       <td><%= book.language %></td>
       <td><%= book.details %></td>
-      <td><%= link_to 'Show', book_path(book)%></td>
       <td><%= link_to 'Get it', user_get_book_path(book) %></td>
     </tr>
     </tbody>
@@ -36,6 +34,6 @@
 </table>
 </div>
 
-<%= link_to 'Home', root_path, :class => "middle" %>
+<%= link_to 'Back', user_path(current_user), :class => "middle" %>
 
 

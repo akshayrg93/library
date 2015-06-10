@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_filter :find_user, only: [:show, :destroy]
   before_filter :require_user, only: [:show, :edit, :update, :get_book]
   before_filter :require_no_user, only: [:new, :create]
+  before_filter :require_admin, only: [:index]
   
   def index
     if params[:sort] == "asc"
