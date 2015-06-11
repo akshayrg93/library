@@ -66,6 +66,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def return_book
+    @user = current_user
+    @book = Book.find(params[:id])
+    @user.update_attributes(:book_name => nil, :book_count => current_user.book_count - 1)
+    @book.update_attributes(:user_id => nil)
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def user_params

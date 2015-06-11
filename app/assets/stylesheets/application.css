@@ -16,4 +16,5 @@
  
 nav {
 	display: inline-flex;
+	float: right;
 }

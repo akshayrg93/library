@@ -19,8 +19,34 @@
   State   : <%= @user.state %><br>
 
   Country : <%= @user.country %><br>
-
-  Books Taken : <%= @user.book_name %><br>
+</div>
+  
+<h2><font color="white">Books Taken</font></h2>
+<div class = "datagrid">
+  <table>
+    <thead>
+     <tr>
+       <th>Name</th>
+       <th>Author</th>
+       <th>Return</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="3">
+        <div id="no-paging">&nbsp;</div>
+      </tr>
+    </tfoot>
+    <% @user.books.each do |book| %>
+      <tbody>
+        <tr>
+          <td><%= book.name %></td>
+          <td><%= book.author %></td>
+          <td><%= link_to 'Return', user_return_book_path(book.id) %></td>
+        </tr>    
+      </tbody>
+    <% end %>
+  </table>
 </div>
 
 <br><%= link_to 'Books List', show_available_books_path, :class => "middle" %>
