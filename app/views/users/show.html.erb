@@ -1,7 +1,11 @@
 <h1>User Details</h1>
 
+<h2><font color="green"><%= flash[:win] %></font></h2>
+<h2><font color="green"><%= flash[:registration] %></font></h2>
+<h2><font color="green"><%= flash[:profile_update] %></font></h2>
 <h2><font color="green"><%= flash[:success] %></font></h2>
 <h2><font color="red"><%= flash[:failure] %></font></h2>
+
 <div class = "user_details">
 
   Name    : <%=  @user.name %><br>
@@ -16,6 +20,7 @@
 
   Country : <%= @user.country %><br>
 
+  Books Taken : <%= @user.book_name %><br>
 </div>
 
 <br><%= link_to 'Books List', show_available_books_path, :class => "middle" %>

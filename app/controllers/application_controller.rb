@@ -5,16 +5,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :current_user_session  
   
-  private  
+  private 
+
   def current_user_session  
-    
     logger.debug "ApplicationController::current_user_session"
     return @current_user_session if defined?(@current_user_session)  
     @current_user_session = UserSession.find  
   end  
   
-  def current_user  
-   
+  def current_user     
     logger.debug "ApplicationController::current_user"
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record  
@@ -30,8 +29,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def require_no_user
-  
+  def require_no_user  
     logger.debug "ApplicationController::require_no_user"
     if current_user
       store_location
@@ -50,7 +48,6 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-
 
   def store_location
     session[:return_to] = request.fullpath

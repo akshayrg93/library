@@ -4,7 +4,6 @@ class UserSessionsController < ApplicationController
   before_filter :require_user, :only => [:destroy, :edit, :update]
   
   def new
-    puts"create session"
   	@user_session = UserSession.new
   end
 
@@ -17,9 +16,7 @@ class UserSessionsController < ApplicationController
         redirect_to admin_home_path 
       else
         redirect_to user_path(current_user)
-      end
-      #puts "................", @user_session.user.role.to_yaml 
-       
+      end        
     else 
       flash[:fail] = "Invalid username or password"
       render :action => 'new'    
@@ -33,7 +30,7 @@ class UserSessionsController < ApplicationController
   def update  
     @user = current_user  
     if @user.update_attributes(params[:user])  
-      flash[:notice] = "Successfully updated profile."  
+      flash[:profile_update] = "Successfully updated profile."  
       redirect_back_or_default user_path(current_user)  
     else  
       render :action => 'edit'  

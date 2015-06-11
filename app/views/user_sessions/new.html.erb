@@ -1,17 +1,20 @@
 <h1>Login</h1>
-<h2><font color="red"><%= flash[:fail] %></font></h2>
-<%= form_for @user_session, :url => {:action => "create"} do |form| %>  
+<h2><font color="red"><%= flash[:fail] %></font></h2>\
 
+<%= form_for @user_session, :url => {:action => "create"} do |form| %>  
   <p>  
     <%= form.label :email, class: "form_label" %>  
     <%= form.text_field :email, class: "form_field" %>  
   </p>
+
   <p>
     <%= form.label :password, class: "form_label" %>  
     <%= form.password_field :password, class: "form_field" %>  
   </p>
+
   <p>
     <%= form.submit "Submit" %>  
-  </p>
+  </p>  
 <% end %>
+
 <%= link_to 'Home', root_path, :class => "middle" %>

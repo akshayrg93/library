@@ -1,44 +1,44 @@
 <h1>Users List</h1>
+
 <h2><font color="green"><%= flash[:notice] %></font></h2>
+
 <div class = "datagrid">
-<table>
-  <thead>
-  <tr>
-    <th>Name <%= link_to 'Sort-ASC', users_path(:sort => "asc"), :class => "small" %>
-             <%= link_to 'Sort-DESC', users_path(:sort => "desc"), :class => "small" %> </th>
-    <th>Addres</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>State</th>
-    <th>Country <%= link_to 'Sort-ASC', users_path(:sort => "country_asc"), :class => "small" %>
-             <%= link_to 'Sort-DESC', users_path(:sort => "country_desc"), :class => "small" %></th>
-    <th>Destroy</th>
-  </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td colspan="7">
+  <table>
+    <thead>
+      <tr>
+        <th>Name <%= link_to 'Sort-ASC', users_path(:sort => "asc"), :class => "small" %>
+                 <%= link_to 'Sort-DESC', users_path(:sort => "desc"), :class => "small" %> </th>
+        <th>Addres</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>State</th>
+        <th>Country <%= link_to 'Sort-ASC', users_path(:sort => "country_asc"), :class => "small" %>
+                    <%= link_to 'Sort-DESC', users_path(:sort => "country_desc"), :class => "small" %></th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="7">
         <div id="no-paging">&nbsp;</div>
-    </tr>
-  </tfoot>
-
-  <% @users.each do |user| %>
-  <tbody>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= user.address %></td>
-      <td><%= user.email %></td>
-      <td><%= user.phone %></td>
-      <td><%= user.state %></td>
-      <td><%= user.country %></td>
-      <td><%= link_to 'Destroy', user_path(user), 
-      method: :delete,
-      data: { confirm: 'Are you sure?' }%></td>
-    </tr>
+      </tr>
+    </tfoot>
+    <% @users.each do |user| %>
+      <tbody>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.address %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone %></td>
+          <td><%= user.state %></td>
+          <td><%= user.country %></td>
+          <td><%= link_to 'Destroy', user_path(user), 
+                                     method: :delete,
+                                     data: { confirm: 'Are you sure?' }%></td>
+        </tr>
+      </tbody>
     <% end %>
-  </tbody>
-</table>
+  </table>
 </div>
-
 
 <%= link_to 'Home', admin_home_path, :class => "middle" %>

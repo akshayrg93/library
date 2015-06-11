@@ -1,37 +1,37 @@
-
 <h1>Books List</h1>
+
 <h3><font color="green">You can take a maximum of 3 books</font></h3><br>
 <h3><font color="green">You took <%= @user.book_count %> books</font></h3>
-<div class = "datagrid">
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Author</th>
-    <th>Language</th>
-    <th>Details</th>
-    <th>Get it</th>
-  </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td colspan="6">
-        <div id="no-paging">&nbsp;</div>
-    </tr>
-  </tfoot>
 
-  <% @books.each do |book| %>
-  <tbody>
-    <tr>
-      <td><%= book.name %></td>
-      <td><%= book.author %></td>
-      <td><%= book.language %></td>
-      <td><%= book.details %></td>
-      <td><%= link_to 'Get it', user_get_book_path(book) %></td>
-    </tr>
-    </tbody>
-  <% end %> 
-</table>
+<div class = "datagrid">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Language</th>
+        <th>Details</th>
+        <th>Get it</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+        <div id="no-paging">&nbsp;</div>
+      </tr>
+    </tfoot>
+    <% @books.each do |book| %>
+      <tbody>
+        <tr>
+          <td><%= book.name %></td>
+          <td><%= book.author %></td>
+          <td><%= book.language %></td>
+          <td><%= book.details %></td>
+          <td><%= link_to 'Get it', user_get_book_path(book) %></td>
+        </tr>
+      </tbody>
+    <% end %> 
+  </table>
 </div>
 
 <%= link_to 'Back', user_path(current_user), :class => "middle" %>

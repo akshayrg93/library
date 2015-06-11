@@ -1,14 +1,16 @@
 class BooksController < ApplicationController
+  
   layout "application"
+  
   before_filter :find_book, only: [:show, :edit, :update, :destroy, :get_books]
   before_filter :require_admin, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   before_filter :require_user, only: [:show_book_list]
+  
   def index
     @books = Book.all
   end
 
   def show  
-  
   end
 
   def new
@@ -25,7 +27,6 @@ class BooksController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -42,8 +43,6 @@ class BooksController < ApplicationController
   end
 
   def show_book_list
-    @user = User.find(params[:id])
-    session[:selected_user] = @user.id
     @books = Book.where(user_id: nil )
   end
 
@@ -56,5 +55,4 @@ class BooksController < ApplicationController
   def find_book
     @book = Book.find(params[:id])
   end
-
 end

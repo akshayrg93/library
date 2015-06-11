@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to(user_path(@user), :notice => 'Registration successfull.')
+      redirect_to(user_path(@user), :registration => 'Registration successfull.')
     else
       render :action => "new"
     end
@@ -56,16 +56,13 @@ class UsersController < ApplicationController
   end
 
   def get_book
-    selected_user = session[:selected_user]
     @book = Book.find(params[:id])
-    @user = User.find(selected_user)
-
-    if @user.book_count >= 3
-      redirect_to user_path(@user), :flash => { :failure => "You cannot take more than 3 books" }
+    if current_user.book_count >= 3
+      redirect_to user_path(current_user), :flash => { :failure => "You cannot take more than 3 books" }
     else
-      @book.update_attributes(:user_id => session[:selected_user])
-      @user.update_attributes(:book_name => @book.name, :book_count => @user.book_count + 1)
-      redirect_to user_path(@user), :flash => { :success => "You got the book" }
+      @book.update_attributes(:user_id => current_user.id)
+      current_user.update_attributes(:book_name => @book.name, :book_count => current_user.book_count + 1)
+      redirect_to user_path(current_user), :flash => { :success => "You got the book" }
     end
   end
 

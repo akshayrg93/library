@@ -1,22 +1,21 @@
 body {
   background-image: url("back.jpg");
- }
+}
 
 a:link {
-    display: block;
-    font-weight: bold;
-    background-color: white;
-    width: 100px;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    opacity:0.7;
-    
+  display: block;
+  font-weight: bold;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity:0.7;    
 }
 
 a:hover {
-    background-color: #F4A460;
+  background-color: #F4A460;
 }
 
 .form_field { 
@@ -49,43 +48,45 @@ h1 {
 
 
 .sub_button {
-    -moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
-    box-shadow:inset 0px 1px 0px 0px #a6827e;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
-    background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-    background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-    background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-    background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-    background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
-    background-color:#7d5d3b;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-    border-radius:3px;
-    border:1px solid #54381e;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:13px;
-    padding:7px 40px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #4d3534;
+  -moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+  box-shadow:inset 0px 1px 0px 0px #a6827e;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
+  background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
+  background-color:#7d5d3b;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #54381e;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:13px;
+  padding:7px 40px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #4d3534;
 }
+
 .sub_button:hover {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
-    background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-    background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-    background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-    background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-    background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
-    background-color:#634b30;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
+  background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
+  background-color:#634b30;
 }
+
 .sub_button:active {
-    position:relative;
-    top:1px;
+  position:relative;
+  top:1px;
 }
 
 div.form_label {
@@ -97,20 +98,20 @@ div.form_label {
 }
 
 a.middle:link {
-    display: block;
-    font-weight: bold;
-    background-color: white;
-    width: 100px;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    opacity:0.7;
-    margin-left: 45%;
+  display: block;
+  font-weight: bold;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity:0.7;
+  margin-left: 45%;
 }
 
 a.small:link {
-    display: table;
+  display: table;
   font-weight: bold;
   background-color: transparent;
   width: 83px;

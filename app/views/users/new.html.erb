@@ -1,12 +1,11 @@
+<h1>Create new user</h1>
 
-  <h1>Create new user</h1>
-  <% if @user.errors.any? %>
+<% if @user.errors.any? %>
   <div class="error_explanation">
-
-      <li><%= @user.errors.full_messages.first if @user.errors.any? %></li>
-
+    <li><%= @user.errors.full_messages.first if @user.errors.any? %></li>
   </div>
 <% end %>
-  <%= render 'form' %>
-<%= link_to 'Home', root_path, :class => "middle" %>
 
+<%= render 'form' %>
+
+<%= link_to 'Home', root_path, :class => "middle" %>

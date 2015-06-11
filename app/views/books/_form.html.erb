@@ -1,29 +1,25 @@
-  
-  <%= form_for @book do |f| %>
-    <p>
-      <%= f.label :name, class: 'form_label' %><br>
-      <%= f.text_field :name, class: 'form_field' %>
-    </p>
+<%= form_for @book do |f| %>
+  <p>
+    <%= f.label :name, class: 'form_label' %><br>
+    <%= f.text_field :name, class: 'form_field' %>
+  </p>
 
-    <p>
-      <%= f.label :author, class: 'form_label' %><br>
-      <%= f.text_field :author, class: 'form_field' %>
-    </p>
+  <p>
+    <%= f.label :author, class: 'form_label' %><br>
+    <%= f.text_field :author, class: 'form_field' %>
+  </p>
 
-    <p>
-      <%= f.label :language, class: 'form_label' %><br>
-      <%= f.text_field :language, class: 'form_field' %>
-    </p> 
+  <p>
+    <%= f.label :language, class: 'form_label' %><br>
+    <%= f.text_field :language, class: 'form_field' %>
+  </p> 
 
-    <p>
-      <%= f.label :details, class: 'form_label' %><br>
-      <%= f.text_area :details, class: 'form_field' %>
-    </p>
+  <p>
+    <%= f.label :details, class: 'form_label' %><br>
+    <%= f.text_area :details, class: 'form_field' %>
+  </p>
 
-    <p>
-      <%= f.submit :class => 'sub_button' %>
-    </p>
- <% end %>
-
-
- 
+  <p>
+    <%= f.submit :class => 'sub_button' %>
+  </p>
+<% end %>

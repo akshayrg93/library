@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Library</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= favicon_link_tag %>
-  <%= stylesheet_link_tag "users" %>
-  <%= stylesheet_link_tag "table" %>
-  <%= stylesheet_link_tag "books" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav>
-	<% if current_user %>  
-    <div class = "profile"><%= "Signed in as #{current_user.email}" %></div>
-    <%= link_to "Edit profile", edit_user_path(:current) %>     
-    <%= link_to "Logout", logout_path %>  
-  <% else %>  
-    <%= link_to "Register", new_user_path %> | 
-    <%= link_to "Log in", login_path %>  
-  <% end %> 
-</nav>
-<%= yield %>
-
-</body>
+  <head>
+    <title>Library</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= favicon_link_tag %>
+    <%= stylesheet_link_tag "users" %>
+    <%= stylesheet_link_tag "table" %>
+    <%= stylesheet_link_tag "books" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav>
+	    <% if current_user %>  
+        <div class = "profile"><%= "Signed in as #{current_user.email}" %></div>
+        <%= link_to "Edit profile", edit_user_path(:current) %>     
+        <%= link_to "Logout", logout_path %>  
+      <% else %>  
+        <%= link_to "Register", new_user_path %> | 
+        <%= link_to "Log in", login_path %>  
+      <% end %> 
+    </nav>
+    <%= yield %>
+  </body>
 </html>
