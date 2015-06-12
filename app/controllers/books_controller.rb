@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   before_filter :require_user, only: [:show_book_list]
   
   def index
-    @books = Book.all
+    @books = Book.order("name").page(params[:page]).per(5)
   end
 
   def show  

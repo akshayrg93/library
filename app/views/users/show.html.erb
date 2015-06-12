@@ -1,4 +1,4 @@
-<h1>User Details</h1>
+<h1 class = "headings">User Details</h1>
 
 <h2><font color="green"><%= flash[:win] %></font></h2>
 <h2><font color="green"><%= flash[:registration] %></font></h2>
@@ -42,7 +42,7 @@
         <tr>
           <td><%= book.name %></td>
           <td><%= book.author %></td>
-          <td><%= link_to 'Return', user_return_book_path(book.id) %></td>
+          <td><%= link_to 'Return', user_return_book_path(book.id), :class => "large" %></td>
         </tr>    
       </tbody>
     <% end %>

@@ -8,10 +8,10 @@
   font: normal 12px/150% Arial, Helvetica, sans-serif; 
   background: #fff; 
   overflow: hidden; 
-  border: 2px solid #30201B; 
+  border: 1px solid #6E6E6E;
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
-  border-radius: 5px; 
+  border-radius: 0px; 
 }
 
 .datagrid table td, .datagrid table th { 
@@ -52,7 +52,7 @@
 
 .datagrid table tfoot td div { 
   border-top: 1px solid #30201B;
-  background: #F0E5CC;
+  background: #87633F;
 } 
 
 .datagrid table tfoot td { 

@@ -1,4 +1,4 @@
-<h1>Users List</h1>
+<h1 class = "headings">Users List</h1>
 
 <h2><font color="green"><%= flash[:notice] %></font></h2>
 
@@ -32,7 +32,7 @@
           <td><%= user.phone %></td>
           <td><%= user.state %></td>
           <td><%= user.country %></td>
-          <td><%= link_to 'Destroy', user_path(user), 
+          <td><%= link_to 'Destroy', user_path(user), :class => "large", 
                                      method: :delete,
                                      data: { confirm: 'Are you sure?' }%></td>
         </tr>

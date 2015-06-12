@@ -1,4 +1,4 @@
-<h1>Books List</h1>
+<h1 class = "headings">Books List</h1>
 
 <h3><font color="green">You can take a maximum of 3 books</font></h3><br>
 <h3><font color="green">You took <%= current_user.book_count %> books</font></h3>
@@ -27,7 +27,7 @@
           <td><%= book.author %></td>
           <td><%= book.language %></td>
           <td><%= book.details %></td>
-          <td><%= link_to 'Get it', user_get_book_path(book) %></td>
+          <td><%= link_to 'Get it', user_get_book_path(book), :class => "large" %></td>
         </tr>
       </tbody>
     <% end %> 

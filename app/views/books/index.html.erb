@@ -1,4 +1,4 @@
-<h1>Books List</h1>
+<h1 class = "headings">Books List</h1>
 <div class = "datagrid">
   <table>
     <thead>
@@ -25,14 +25,15 @@
           <td><%= book.author %></td>
           <td><%= book.language %></td>
           <td><%= book.details %></td>
-          <td><%= link_to 'Show', book_path(book)%></td>
-          <td><%= link_to 'Edit', edit_book_path(book)%></td>
-          <td><%= link_to 'Destroy', book_path(book), :method => :delete,data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to 'Show', book_path(book), :class => "large"%></td>
+          <td><%= link_to 'Edit', edit_book_path(book), :class => "large"%></td>
+          <td><%= link_to 'Destroy', book_path(book), :class => "large", :method => :delete,data: {confirm: 'Are you sure?'} %></td>
         </tr>    
       </tbody>
     <% end %>
   </table>
 </div>
+<br><%= paginate @books %><br>
 
 <%= link_to 'New book', new_book_path, :class => "middle" %><br>
 <%= link_to 'Home', admin_home_path, :class => "middle" %>
