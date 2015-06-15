@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :users
+  resources :users do
+    collection do
+      put :get_book
+    end
+  end
   resources :books
   resources :user_sessions
   # You can have the root of your site routed with "root"
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout, via: [:get, :post]
   match 'admin_home' => 'home#admin_home', :as => :admin_home, via: [:get, :post]
   # Example of regular route:
-  get 'users/get_book/:id' => 'users#get_book', as: 'user_get_book'
+  #get 'users/get_book/:id' => 'users#get_book', as: 'user_get_book'
   get 'books/show_book_list/:id' => 'books#show_book_list', as: 'show_available_books'
   get 'users/return_book/:id' => 'users#return_book', as: 'user_return_book'
   
@@ -21,16 +25,8 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  
+
 
   # Example resource route with sub-resources:
   #   resources :products do

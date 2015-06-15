@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   layout "application"
-
   before_filter :find_user, only: [:show, :destroy]
   before_filter :require_user, only: [:show, :edit, :update, :get_book]
   before_filter :require_no_user, only: [:new, :create]
@@ -56,12 +55,14 @@ class UsersController < ApplicationController
   end
 
   def get_book
-    @book = Book.find(params[:id])
-    if current_user.book_count >= 3
+    if current_user.book_count + params[:book_ids].size > 3
       redirect_to user_path(current_user), :flash => { :failure => "You cannot take more than 3 books" }
     else
-      @book.update_attributes(:user_id => current_user.id)
-      current_user.update_attributes(:book_name => @book.name, :book_count => current_user.book_count + 1)
+        params[:book_ids].each do |book|
+          @book = Book.find(book)
+          @book.update_attributes(:user_id => current_user.id)
+          current_user.update_attributes(:book_name => @book.name, :book_count => current_user.book_count + 1)
+        end
       redirect_to user_path(current_user), :flash => { :success => "You got the book" }
     end
   end
