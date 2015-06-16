@@ -55,8 +55,10 @@ class UsersController < ApplicationController
   end
 
   def get_book
-    if current_user.book_count + params[:book_ids].size > 3
-      redirect_to user_path(current_user), :flash => { :failure => "You cannot take more than 3 books" }
+    if params[:book_ids].nil?
+      redirect_to show_available_books_path(current_user), :flash => { :failure => "You have not selected any book" }
+    elsif current_user.book_count + params[:book_ids].size > 3
+      redirect_to show_available_books_path(current_user), :flash => { :failure => "You cannot take more than 3 books" }
     else
         params[:book_ids].each do |book|
           @book = Book.find(book)
