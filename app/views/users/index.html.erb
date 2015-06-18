@@ -6,14 +6,14 @@
   <table>
     <thead>
       <tr>
-        <th>Name <%= link_to 'Sort-ASC', users_path(:sort => "asc"), :class => "small" %>
-                 <%= link_to 'Sort-DESC', users_path(:sort => "desc"), :class => "small" %> </th>
+        <th>Name <%= link_to image_tag("up_arrow.png", :border => 0), users_path(:sort => "asc"), :class => "small" %>
+                 <%= link_to image_tag("down_arrow.png", :border => 0), users_path(:sort => "desc"), :class => "small" %> </th>
         <th>Addres</th>
         <th>Email</th>
         <th>Phone</th>
         <th>State</th>
-        <th>Country <%= link_to 'Sort-ASC', users_path(:sort => "country_asc"), :class => "small" %>
-                    <%= link_to 'Sort-DESC', users_path(:sort => "country_desc"), :class => "small" %></th>
+        <th>Country <%= link_to image_tag("up_arrow.png", :border => 0), users_path(:sort => "country_asc"), :class => "small" %>
+                    <%= link_to image_tag("down_arrow.png", :border => 0), users_path(:sort => "country_desc"), :class => "small" %></th>
         <th>Destroy</th>
       </tr>
     </thead>
