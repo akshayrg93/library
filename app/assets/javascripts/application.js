@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function()
+{
+  $('.delete_book').click(function(event)
+  { 
+    var URL = $(this).attr('href');
+    $(this).closest('tr').find('td').fadeOut('fast', function(here)
+    { 
+      $(here).parents('tr:first').remove();                    
+    });
+        
+    $.ajax
+    ({
+    	 method: "DELETE",
+       url: URL,
+       success: function(result)
+       {
+         $("#books").html(result);
+       }
+    }); 
+     
+    return false;
+  });
+});

@@ -22,31 +22,36 @@
 </div>
   
 <h2><font color="white">Books Taken</font></h2>
-<div class = "datagrid">
-  <table>
-    <thead>
-     <tr>
-       <th>Name</th>
-       <th>Author</th>
-       <th>Return</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <td colspan="3">
-        <div id="no-paging">&nbsp;</div>
-      </tr>
-    </tfoot>
-    <% @user.books.each do |book| %>
-      <tbody>
+
+<% if @user.books.empty? %>
+  <h2><font color="white">You have not taken any books</font></h2>
+<% else %>
+  <div class = "datagrid">
+    <table>
+      <thead>
         <tr>
-          <td><%= book.name %></td>
-          <td><%= book.author %></td>
-          <td><%= link_to 'Return', user_return_book_path(book.id), :class => "large" %></td>
-        </tr>    
-      </tbody>
-    <% end %>
-  </table>
-</div>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Return</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="3">
+          <div id="no-paging">&nbsp;</div>
+        </tr>
+      </tfoot>
+      <% @user.books.each do |book| %>
+        <tbody>
+          <tr>
+            <td><%= book.name %></td>
+            <td><%= book.author %></td>
+            <td><%= link_to 'Return', user_return_book_path(book.id), :class => "large" %></td>
+          </tr>    
+        </tbody>
+      <% end %>
+    </table>
+  </div>   
+<% end %>
 
 <br><%= link_to 'Books List', show_available_books_path, :class => "middle" %>

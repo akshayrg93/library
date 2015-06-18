@@ -39,7 +39,11 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_path
+    respond_to do |format|
+      format.html { redirect_to books_path }
+      format.json { head :no_content }
+      format.js   { render :layout => false }
+    end
   end
 
   def show_book_list

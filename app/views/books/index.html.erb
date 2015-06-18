@@ -27,7 +27,7 @@
           <td><%= book.details %></td>
           <td><%= link_to 'Show', book_path(book), :class => "large"%></td>
           <td><%= link_to 'Edit', edit_book_path(book), :class => "large"%></td>
-          <td><%= link_to 'Destroy', book_path(book), :class => "large", :method => :delete,data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to 'Destroy', book_path(book), :class => "large", :class => "delete_book", :method => :delete,data: {confirm: 'Are you sure?'} %></td>
         </tr>    
       </tbody>
     <% end %>

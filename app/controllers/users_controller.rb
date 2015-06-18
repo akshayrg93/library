@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   layout "application"
+  
   before_filter :find_user, only: [:show, :destroy]
   before_filter :require_user, only: [:show, :edit, :update, :get_book]
   before_filter :require_no_user, only: [:new, :create]
@@ -65,7 +66,7 @@ class UsersController < ApplicationController
           @book.update_attributes(:user_id => current_user.id)
           current_user.update_attributes(:book_name => @book.name, :book_count => current_user.book_count + 1)
         end
-      redirect_to user_path(current_user), :flash => { :success => "You got the book" }
+      redirect_to user_path(current_user), :flash => { :success => "You got the book(s)" }
     end
   end
 
