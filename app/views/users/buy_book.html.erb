@@ -1,5 +1,5 @@
-<h1 class = "headings">Book Details</h1>
-
+<h1 class = "headings">Buy book</h1>
+<h2><font color="white">The selected book is:</font></h2>
 <div class="form_label">
   Name    : <%=  @book.name %><br>
 
@@ -11,5 +11,5 @@
 
   Number of copies: <%= @book.no_of_copies %><br>
 </div>
-
-<%= link_to 'Back', books_path, :class => "middle" %>
+Select number of copies required: <%= collection_select(1..3) &>
+<%= link_to 'Back', :back, :class => "middle" %>

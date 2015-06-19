@@ -11,7 +11,9 @@
         <th>Author</th>
         <th>Language</th>
         <th>Details</th>
-        <th>Get it</th>
+        <th>Copies Available</th>
+        <th>Lend</th>
+        <th>Buy</th>
       </tr>
     </thead>
     <tfoot>
@@ -27,14 +29,15 @@
           <td><%= book.author %></td>
           <td><%= book.language %></td>
           <td><%= book.details %></td>
-          <td><%= check_box_tag 'book_ids[]', book.id %>
-         </td>
+          <td><%= book.no_of_copies %></td>
+          <td><%= check_box_tag 'book_ids[]', book.id %></td>
+          <td><%= link_to 'Buy', user_buy_book_path(book.id), :class => "large" %></td>
         </tr>
       </tbody>
     <% end %> 
   </table>
 </div>
-<%= submit_tag "Get checked books", :class => "get_checked" %> 
+<%= submit_tag "Lend books", :class => "get_checked" %> 
 <% end %>
 <%= link_to 'Back', user_path(current_user), :class => "middle" %>
 

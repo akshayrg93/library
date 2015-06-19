@@ -71,6 +71,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def buy_book
+    @book = Book.find(params[:id])
+  end
+
   def return_book
     @user = current_user
     @book = Book.find(params[:id])
