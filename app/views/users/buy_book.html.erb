@@ -16,8 +16,9 @@
 
 <%= form_tag buy_selected_books_path, method: :get do %>
   <h2><font color="yellowgreen"> Price: Rs. <%= @book.price %><br></font></h2>
-  <h2><font color="yellowgreen"> Select number of copies required: <%= collection_select :aaa, :bbb, 1..@book.no_of_copies, :to_s, :to_s %></font></h2>
+  <h2><font color="yellowgreen"> Select number of copies required: <%= collection_select(:aaa, :bbb, 1..@book.no_of_copies, :to_f, :to_s) %></font></h2>
   <%= submit_tag "BUY", :class => "middle" %>
 <% end %>
 
 <%= link_to 'Back', :back, :class => "middle" %>
+

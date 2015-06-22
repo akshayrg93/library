@@ -54,4 +54,5 @@
   </div>   
 <% end %>
 
-<br><%= link_to 'Books List', show_available_books_path, :class => "middle" %>
+<br><%= link_to 'Get a book', show_available_books_path(:type => "lend"), :class => "middle" %>
+<br><%= link_to 'Buy a book', show_available_books_path(:type => "buy"), :class => "middle" %>

@@ -47,18 +47,21 @@ class BooksController < ApplicationController
   end
 
   def show_book_list
-    @books = Book.where(user_id: nil )
+    if params[:type] == "lend"
+      @books = Book.where(user_id: nil, purchasable: false )
+    elsif params[:type] == "buy"
+      @books = Book.where(user_id: nil, purchasable: true)
+    end
   end
 
   def buy_selected_books
-    @cost = @book.price * :bbb
-
+    @cost = @book.price * "aaa"=>{"bbb"}
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:name, :author, :language, :details, :no_of_copies, :price)
+    params.require(:book).permit(:name, :author, :language, :details, :no_of_copies, :price, :purchasable)
   end
 
   def find_book

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery.turbolinks
 
 
 $(document).ready(function()
@@ -38,4 +39,10 @@ $(document).ready(function()
      
     return false;
   });
+
+  $('#book_purchasable').click(function(){
+    $('#purchasable').css('display', ($(this).is(':checked') ? 'block' : 'none'));
 });
+});
+
+
