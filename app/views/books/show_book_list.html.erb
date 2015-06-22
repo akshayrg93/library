@@ -11,14 +11,15 @@
         <th>Author</th>
         <th>Language</th>
         <th>Details</th>
+        <th>Price</th>
         <th>Copies Available</th>
-        <th>Lend</th>
+        <th>Take a book</th>
         <th>Buy</th>
       </tr>
     </thead>
     <tfoot>
       <tr>
-        <td colspan="7">
+        <td colspan="8">
         <div id="no-paging">&nbsp;</div>
       </tr>
     </tfoot>
@@ -29,6 +30,7 @@
           <td><%= book.author %></td>
           <td><%= book.language %></td>
           <td><%= book.details %></td>
+          <td>Rs.<%= book.price %></td>
           <td><%= book.no_of_copies %></td>
           <td><%= check_box_tag 'book_ids[]', book.id %></td>
           <td><%= link_to 'Buy', user_buy_book_path(book.id), :class => "large" %></td>
@@ -37,7 +39,7 @@
     <% end %> 
   </table>
 </div>
-<%= submit_tag "Lend books", :class => "get_checked" %> 
+<%= submit_tag "Take selected books", :class => "get_checked" %> 
 <% end %>
 <%= link_to 'Back', user_path(current_user), :class => "middle" %>
 

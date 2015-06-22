@@ -62,11 +62,11 @@ class UsersController < ApplicationController
     elsif current_user.book_count + params[:book_ids].size > 3
       redirect_to show_available_books_path(current_user), :flash => { :failure => "You cannot take more than 3 books" }
     else
-        params[:book_ids].each do |book|
-          @book = Book.find(book)
-          @book.update_attributes(:user_id => current_user.id)
-          current_user.update_attributes(:book_name => @book.name, :book_count => current_user.book_count + 1)
-        end
+      params[:book_ids].each do |book|
+        @book = Book.find(book)
+        @book.update_attributes(:user_id => current_user.id)
+        current_user.update_attributes(:book_name => @book.name, :book_count => current_user.book_count + 1)
+      end
       redirect_to user_path(current_user), :flash => { :success => "You got the book(s)" }
     end
   end

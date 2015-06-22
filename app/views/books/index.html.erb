@@ -7,6 +7,7 @@
        <th>Author</th>
        <th>Language</th>
        <th>Details</th>
+       <th>Price per copy</th>
        <th>No.of Copies</th>
        <th>Show</th>
        <th>Edit</th>
@@ -15,7 +16,7 @@
     </thead>
     <tfoot>
       <tr>
-        <td colspan="8">
+        <td colspan="9">
         <div id="no-paging">&nbsp;</div>
       </tr>
     </tfoot>
@@ -26,6 +27,7 @@
           <td><%= book.author %></td>
           <td><%= book.language %></td>
           <td><%= book.details %></td>
+          <td>Rs. <%= book.price %></td>
           <td><%= book.no_of_copies %></td>
           <td><%= link_to 'Show', book_path(book), :class => "large"%></td>
           <td><%= link_to 'Edit', edit_book_path(book), :class => "large"%></td>
