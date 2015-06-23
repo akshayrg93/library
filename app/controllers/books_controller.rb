@@ -5,9 +5,13 @@ class BooksController < ApplicationController
   before_filter :find_book, only: [:show, :edit, :update, :destroy, :get_books, :buy_selected_books]
   before_filter :require_admin, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   before_filter :require_user, only: [:show_book_list]
-  
+
   def index
-    @books = Book.order("name").page(params[:page]).per(5)
+    if params[:search]
+      @books = Book.where('name LIKE ?', "%#{params[:search]}%").order("name").page(params[:page]).per(5)
+    else
+      @books = Book.all.order("name").page(params[:page]).per(5)
+    end
   end
 
   def show  
