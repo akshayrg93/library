@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'users/return_book/:id' => 'users#return_book', as: 'user_return_book'
   get 'users/buy_book/:id' => 'users#buy_book', as: 'user_buy_book'
   get 'books/buy_selected_books/:id' => 'books#buy_selected_books', as: 'buy_selected_books'
+  get 'books/payment/:id1/:id2' => 'books#payment', as: 'payment'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #get 'books/show_book_list' => 'books#show_book_list'
 

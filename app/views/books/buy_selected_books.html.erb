@@ -1,1 +1,8 @@
-<h2><font color="red"><%= @cost %></font></h2>
+<h1 class = "headings">Payement</h1>
+
+<h2><font color="orange">Total amount for the selected no.of copies is Rs. <%= @cost %></font></h2>
+
+
+<%= link_to 'Pay Now', payment_path(@book, @copies), :class => "middle" %>
+
+<%= link_to 'Back', :back, :class => "middle" %>

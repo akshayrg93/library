@@ -1,9 +1,11 @@
 <h1 class = "headings">Books List</h1>
-<h3><font color="green">You can take a maximum of 3 books</font></h3>
-<h3><font color="green">You took <%= current_user.book_count %> books</font></h3>
-<h2><font color="red"><%= flash[:failure] %></font></h2>
+
+
 
 <% if params[:type] == "lend" %>
+  <h3><font color="green">You can take a maximum of 3 books</font></h3>
+  <h3><font color="green">You took <%= current_user.book_count %> books</font></h3>
+  <h2><font color="red"><%= flash[:failure] %></font></h2>
   <%= form_tag get_book_users_path, method: :put do %>
     <div class = "datagrid">  
       <table>

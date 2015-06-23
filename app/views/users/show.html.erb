@@ -1,10 +1,10 @@
 <h1 class = "headings">User Details</h1>
-
 <h2><font color="green"><%= flash[:win] %></font></h2>
 <h2><font color="green"><%= flash[:registration] %></font></h2>
 <h2><font color="green"><%= flash[:profile_update] %></font></h2>
 <h2><font color="green"><%= flash[:success] %></font></h2>
 <h2><font color="red"><%= flash[:failure] %></font></h2>
+<h2><font color="green"><%= flash[:bought_the_book] %></font></h2>
 
 <div class = "user_details">
 
@@ -21,11 +21,12 @@
   Country : <%= @user.country %><br>
 </div>
   
-<h2><font color="white">Books Taken</font></h2>
+
 
 <% if @user.books.empty? %>
   <h2><font color="white">You have not taken any books</font></h2>
 <% else %>
+  <h2><font color="white">Books Taken</font></h2>
   <div class = "datagrid">
     <table>
       <thead>

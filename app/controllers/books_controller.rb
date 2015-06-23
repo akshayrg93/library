@@ -50,12 +50,22 @@ class BooksController < ApplicationController
     if params[:type] == "lend"
       @books = Book.where(user_id: nil, purchasable: false )
     elsif params[:type] == "buy"
-      @books = Book.where(user_id: nil, purchasable: true)
+      @books = Book.where('no_of_copies > 0', purchasable: true)
     end
   end
 
   def buy_selected_books
-    @cost = @book.price * "aaa"=>{"bbb"}
+    @copies = params[:no_of_copies]
+    @cost = @book.price * params[:no_of_copies].to_f
+  end
+
+  def payment
+    @book = Book.find(params[:id1])
+    puts "...................."
+    puts @book.no_of_copies - params[:id2].to_i
+    puts "...................."
+    @book.update_attributes(:no_of_copies => @book.no_of_copies - params[:id2].to_i)
+    redirect_to user_path(current_user), :flash => { :bought_the_book => "You bought the book" }
   end
 
   private
