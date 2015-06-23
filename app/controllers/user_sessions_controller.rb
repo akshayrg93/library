@@ -11,11 +11,16 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])  
     if @user_session.save
       current_user = UserSession.find.user
-      flash[:win] = "Successfully logged in."
-      if @user_session.user.role
-        redirect_to admin_home_path 
+      if current_user.activated
+        flash[:win] = "Successfully logged in."
+        if @user_session.user.role
+          redirect_to admin_home_path 
+        else
+          redirect_to user_path(current_user)
+        end
       else
-        redirect_to user_path(current_user)
+        flash[:not_activated] = "Your account has not been activated. Please contact admin@admin.com"
+         redirect_to logout_path
       end        
     else 
       flash[:fail] = "Invalid username or password"
@@ -38,8 +43,7 @@ class UserSessionsController < ApplicationController
   end  
 
   def destroy
-    current_user_session.destroy  
-    flash[:notice] = "Successfully logged out."  
-    redirect_to root_url  
+    current_user_session.destroy   
+    redirect_to login_path  
   end  
 end

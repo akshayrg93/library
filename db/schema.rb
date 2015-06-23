@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622105128) do
+ActiveRecord::Schema.define(version: 20150623103146) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150622105128) do
     t.string   "password_salt",     limit: 255
     t.string   "persistence_token", limit: 255
     t.boolean  "role",              limit: 1,   default: false
+    t.boolean  "activated",         limit: 1,   default: false
   end
 
 end

@@ -1,6 +1,6 @@
 <h1 class = "headings">Login</h1>
-<h2><font color="red"><%= flash[:fail] %></font></h2>\
-
+<h2><font color="red"><%= flash[:fail] %></font></h2>
+<h2><font color="red"><%= flash[:not_activated] %></font></h2>
 <%= form_for @user_session, :url => {:action => "create"} do |form| %>  
   <p>  
     <%= form.label :email, class: "form_label" %>  

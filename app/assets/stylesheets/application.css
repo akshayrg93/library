@@ -120,3 +120,50 @@ a {
 nav.pagination {
 	color: white;
 }
+
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+.ui-menu {
+  border: 3px solid black;
+  border-radius: 5px;
+  color: black;
+  display: block;
+  float: left;
+  list-style: none outside none;
+  margin: 0;
+  padding: 2px;
+  background-color: white;
+}
+
+.ui-autocomplete {
+  cursor: default;
+  position: absolute;
+}
+
+.ui-menu .ui-menu-item{
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.ui-menu-item li
+        {
+            display: block;
+            padding: 3px 3px 3px 3px;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: green;
+}
+.ui-menu .ui-menu-item li:hover
+        {
+            display: block;
+            padding: 3px 3px 3px 3px;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            background-color: blue;
+}

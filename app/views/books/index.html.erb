@@ -1,13 +1,13 @@
 <h1 class = "headings">Books List</h1>
 
-<div class = "search_box">
+
   <%= form_tag books_path, method: :get do %>
     <p>
-      <%= text_field_tag :search, params[:search] %>
+      <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name' %>
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>
-</div>
+
 
 <div class = "datagrid">
   <table>

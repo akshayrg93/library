@@ -30,6 +30,10 @@ gem 'rails3-generators'
 gem 'kaminari'
 
 gem 'jquery-turbolinks'
+
+gem 'jquery-ui-rails'
+
+gem 'rails3-jquery-autocomplete'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

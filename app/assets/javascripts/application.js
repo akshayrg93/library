@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.turbolinks
+//= require jquery-ui
+//= require autocomplete-rails
 
 
 $(document).ready(function()
@@ -42,7 +44,9 @@ $(document).ready(function()
 
   $('#book_purchasable').click(function(){
     $('#purchasable').css('display', ($(this).is(':checked') ? 'block' : 'none'));
-});
+  });
+
+
 });
 
 

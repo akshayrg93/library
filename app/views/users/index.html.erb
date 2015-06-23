@@ -1,7 +1,9 @@
 <h1 class = "headings">Users List</h1>
 
 <h2><font color="green"><%= flash[:notice] %></font></h2>
-
+<h2><font color="red"><%= flash[:failure] %></font></h2>]
+<h2><font color="green"><%= flash[:success] %></font></h2>
+<%= form_tag activate_user_users_path, method: :put do %>
 <div class = "datagrid">
   <table>
     <thead>
@@ -14,12 +16,13 @@
         <th>State</th>
         <th>Country <%= link_to image_tag("up_arrow.png", :border => 0), users_path(:sort => "country_asc"), :class => "small" %>
                     <%= link_to image_tag("down_arrow.png", :border => 0), users_path(:sort => "country_desc"), :class => "small" %></th>
+        <th>Activate</th>
         <th>Destroy</th>
       </tr>
     </thead>
     <tfoot>
       <tr>
-        <td colspan="7">
+        <td colspan="8">
         <div id="no-paging">&nbsp;</div>
       </tr>
     </tfoot>
@@ -32,6 +35,7 @@
           <td><%= user.phone %></td>
           <td><%= user.state %></td>
           <td><%= user.country %></td>
+          <td><%= check_box_tag 'user_ids[]', user.id %></td>
           <td><%= link_to 'Destroy', user_path(user), :class => "large", 
                                      method: :delete,
                                      data: { confirm: 'Are you sure?' }%></td>
@@ -40,5 +44,6 @@
     <% end %>
   </table>
 </div>
-
+<%= submit_tag "Activate selected users", :class => "get_checked" %>
+<% end %>
 <%= link_to 'Home', admin_home_path, :class => "middle" %>

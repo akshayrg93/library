@@ -83,6 +83,18 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def activate_user
+    if params[:user_ids].nil?
+      redirect_to users_path, :flash => { :failure => "You have not selected any user" }
+    else
+      params[:user_ids].each do |user|
+        @user = User.find(user)
+        @user.update_attributes(:activated => true)
+      end
+      redirect_to users_path, :flash => { :success => "Activated selected users" }
+    end
+  end
+
   private
 
   def user_params

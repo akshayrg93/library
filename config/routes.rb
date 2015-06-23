@@ -4,10 +4,15 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       put :get_book
+      put :activate_user
     end
   end
-  resources :books
+  resources :books do
+    get :autocomplete_book_name, :on => :collection
+  end
   resources :user_sessions
+
+
   # You can have the root of your site routed with "root"
   root 'home#index'
   match 'login' => 'user_sessions#new', :as => :login, via: [:get, :post]
@@ -20,6 +25,7 @@ Rails.application.routes.draw do
   get 'users/buy_book/:id' => 'users#buy_book', as: 'user_buy_book'
   get 'books/buy_selected_books/:id' => 'books#buy_selected_books', as: 'buy_selected_books'
   get 'books/payment/:id1/:id2' => 'books#payment', as: 'payment'
+  get 'users/activate_user/:id' => 'users#activate_user', as: 'activate_user'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #get 'books/show_book_list' => 'books#show_book_list'
 
