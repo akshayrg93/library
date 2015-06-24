@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   layout "application"
   
-  before_filter :find_user, only: [:show, :destroy]
+  before_filter :find_user, only: [:show, :destroy, :activate_user, :deactivate_user]
   before_filter :require_user, only: [:show, :edit, :update, :get_book]
   before_filter :require_no_user, only: [:new, :create]
   before_filter :require_admin, only: [:index]
@@ -84,21 +84,19 @@ class UsersController < ApplicationController
   end
 
   def activate_user
-    if params[:user_ids].nil?
-      redirect_to users_path, :flash => { :failure => "You have not selected any user" }
-    else
-      params[:user_ids].each do |user|
-        @user = User.find(user)
-        @user.update_attributes(:activated => true)
-      end
-      redirect_to users_path, :flash => { :success => "Activated selected users" }
-    end
+    @user.update_attributes(:activated => true)
+    redirect_to users_path
+  end
+
+  def deactivate_user
+    @user.update_attributes(:activated => false)
+    redirect_to users_path
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :email, :phone, :state, :country, :password, :password_confirmation)
+    params.require(:user).permit(:name, :address, :email, :phone, :state, :country, :password, :password_confirmation, :activated)
   end
 
   def find_user

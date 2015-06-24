@@ -3,7 +3,6 @@
 <h2><font color="green"><%= flash[:notice] %></font></h2>
 <h2><font color="red"><%= flash[:failure] %></font></h2>]
 <h2><font color="green"><%= flash[:success] %></font></h2>
-<%= form_tag activate_user_users_path, method: :put do %>
 <div class = "datagrid">
   <table>
     <thead>
@@ -28,15 +27,15 @@
     </tfoot>
     <% @users.each do |user| %>
       <tbody>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= user.address %></td>
-          <td><%= user.email %></td>
-          <td><%= user.phone %></td>
-          <td><%= user.state %></td>
-          <td><%= user.country %></td>
-          <td><%= check_box_tag 'user_ids[]', user.id %></td>
-          <td><%= link_to 'Destroy', user_path(user), :class => "large", 
+        <tr id="row">
+          <td class = "user-row"><%= user.name %></td>
+          <td class = "user-row"><%= user.address %></td>
+          <td class = "user-row"><%= user.email %></td>
+          <td class = "user-row" ><%= user.phone %></td>
+          <td class = "user-row" ><%= user.state %></td>
+          <td class = "user-row"><%= user.country %></td>
+          <td class = "user-row"><%= check_box_tag 'user_id1', user.id, user.activated, :class => "activation_checkbox" %></td>
+          <td class = "user-row"><%= link_to 'Destroy', user_path(user), :class => "large", 
                                      method: :delete,
                                      data: { confirm: 'Are you sure?' }%></td>
         </tr>
@@ -44,6 +43,5 @@
     <% end %>
   </table>
 </div>
-<%= submit_tag "Activate selected users", :class => "get_checked" %>
-<% end %>
+
 <%= link_to 'Home', admin_home_path, :class => "middle" %>

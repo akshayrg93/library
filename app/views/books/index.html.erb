@@ -3,7 +3,7 @@
 
   <%= form_tag books_path, method: :get do %>
     <p>
-      <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name' %>
+      <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name', :data => { :no_matches_label => 'No matches found' } %>
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>
