@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     if params[:search]
       @books = Book.where('name LIKE ?', "%#{params[:search]}%").order("name").page(params[:page]).per(5)
     else
-      @books = Book.all.order("name").page(params[:page]).per(5)
+      @books = Book.order_by_name.page(params[:page]).per(5)
     end
   end
 
@@ -54,9 +54,9 @@ class BooksController < ApplicationController
 
   def show_book_list
     if params[:type] == "lend"
-      @books = Book.where(user_id: nil, purchasable: false )
+      @books = Book.available_for_lending
     elsif params[:type] == "buy"
-      @books = Book.where('no_of_copies > 0', purchasable: true)
+      @books = Book.available_for_selling
     end
   end
 
@@ -67,9 +67,6 @@ class BooksController < ApplicationController
 
   def payment
     @book = Book.find(params[:id1])
-    puts "...................."
-    puts @book.no_of_copies - params[:id2].to_i
-    puts "...................."
     @book.update_attributes(:no_of_copies => @book.no_of_copies - params[:id2].to_i)
     redirect_to user_path(current_user), :flash => { :bought_the_book => "You bought the book" }
   end

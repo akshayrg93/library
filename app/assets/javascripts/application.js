@@ -25,7 +25,7 @@ $(document).ready(function()
   var check_box = document.getElementsByClassName('activation_checkbox')
 for (var i = 0; i < check_box.length; i++) { 
     if (check_box[i].checked == false)
-       check_box[i].parentNode.parentNode.style.backgroundColor = "rgb(178, 70, 70)";
+       check_box[i].parentNode.parentNode.style.backgroundColor = "rgb(213, 141, 141)";
 }
   $('.delete_book').click(function(event)
   { 
@@ -62,7 +62,7 @@ for (var i = 0; i < check_box.length; i++) {
       });
     }  
     else {
-      userRow.style.backgroundColor = "rgb(178, 70, 70)";
+      userRow.style.backgroundColor = "rgb(213, 141, 141)";
       $.ajax
       ({
         type: "POST",

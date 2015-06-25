@@ -1,0 +1,5 @@
+order allow,deny
+deny from 10.7.1.222
+deny from 10.7.1.7
+
+

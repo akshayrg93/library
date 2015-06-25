@@ -9,15 +9,15 @@ class UsersController < ApplicationController
   
   def index
     if params[:sort] == "asc"
-      @users = User.order("name ASC") 
+      @users = User.order_by_name_asc 
     elsif params[:sort] == "desc"
-      @users = User.order("name DESC")
+      @users = User.order_by_name_desc
     elsif params[:sort] == "country_asc"
-      @users = User.order("country ASC")
+      @users = User.order_by_country_asc
     elsif params[:sort] == "country_desc"
-      @users = User.order("country DESC")
+      @users = User.order_by_country_desc
     else
-      @users = User.order("created_at DESC")
+      @users = User.order_by_created
     end  
   end
 
@@ -32,7 +32,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)  
     if @user.save
       RegistrationMail.sample_email(@user).deliver_later!
-      redirect_to(user_path(@user), :registration => 'Registration successfull.')
+      redirect_to logout_path, :flash => { :activation_required => "Successfully registered... Please wait for activation.." }
+
     else
       render :action => "new"
     end
