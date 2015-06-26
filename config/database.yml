@@ -1,9 +1,9 @@
 development:
- adapter: postgresql
+ adapter: mysql2
  encoding: utf8
- database: da1sbk84c3urgo
- username: wrpntxtkbuiygn
- password:  7PHchDPS5u6_JO1rPjOGMZl77v
+ database: library
+ username: root
+ password:  qburst
  host: localhost
  port: 5432
 
