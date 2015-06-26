@@ -1,5 +1,5 @@
 development:
- adapter: postgres
+ adapter: postgresql
  encoding: utf8
  database: da1sbk84c3urgo
  username: wrpntxtkbuiygn
@@ -7,20 +7,20 @@ development:
  host: localhost
  port: 5432
 
-test:
- adapter: mysql2
- encoding: utf8
- database: library_test
- username: root
- password: qburst
- host: localhost
- port: 3306
+# test:
+#  adapter: mysql2
+#  encoding: utf8
+#  database: library_test
+#  username: root
+#  password: qburst
+#  host: localhost
+#  port: 3306
 
-production:
- adapter: postgres
- encoding: utf8
- database: da1sbk84c3urgo
- username: wrpntxtkbuiygn
- password:  7PHchDPS5u6_JO1rPjOGMZl77v
- host: localhost
- port: 5432
+# production:
+#  adapter: postgres
+#  encoding: utf8
+#  database: da1sbk84c3urgo
+#  username: wrpntxtkbuiygn
+#  password:  7PHchDPS5u6_JO1rPjOGMZl77v
+#  host: localhost
+#  port: 5432

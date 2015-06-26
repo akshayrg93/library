@@ -1,0 +1,323 @@
+body {
+  background-image: url("back.jpg");
+}
+
+.get_checked {
+  display: block;
+  background-color: rgba(180, 180, 180, 0.58);
+  margin: auto;
+  margin-right: 0px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+body {
+  background-image: url("lib2.jpg");
+ }
+
+h1 {
+  margin: 0px auto;
+  font-size: 4em;
+  font-family:Arial;
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+  -webkit-margin-before: 1.67em;
+  -webkit-margin-after: 1.67em;
+  -webkit-margin-end: 0px;
+}
+
+a.middle:link {
+  display: block;
+  font-weight: bold;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity:0.7;
+  margin: 0px auto;
+}
+
+a:hover {
+  background-color: #F4A460;
+}
+
+div#nav {
+  display: -webkit-box;   
+  float: right;
+}
+.datagrid table { 
+  border-collapse: collapse; 
+  text-align: left; 
+  width: 100%; 
+}
+
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif; 
+  background: #fff; 
+  overflow: hidden; 
+  border: 1px solid #6E6E6E;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 0px; 
+}
+
+.datagrid table td, .datagrid table th { 
+  padding: 6px 6px;
+}
+
+.datagrid table thead th {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #989E98), color-stop(1, #7F4614));
+  background:-moz-linear-gradient( center top, #989E98 5%, #7F4614 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#989E98', endColorstr='#7F4614');
+  background-color:#989E98; 
+  color:#000000; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border-left: 1px solid #000000; 
+} 
+
+.datagrid table thead th:first-child { 
+  border: none; 
+}
+
+.datagrid table tbody td { 
+  color: #000000; 
+  border-left: 1px solid #000000;
+  font-size: 12px;
+  border-bottom: 1px solid #000000;
+  font-weight: normal; 
+}
+
+
+.datagrid table tbody td:first-child { 
+  border-left: none; 
+}
+
+.datagrid table tbody tr:last-child td { 
+  border-bottom: none; 
+}
+
+.datagrid table tfoot td div { 
+  border-top: 1px solid #30201B;
+  background: #87633F;
+} 
+
+.datagrid table tfoot td { 
+  padding: 0; 
+  font-size: 12px 
+} 
+
+.datagrid table tfoot td div{ 
+  padding: 0px; 
+}
+body {
+  background-image: url("back.jpg");
+}
+
+a.small:link {
+  display: table;
+  font-weight: bold;
+  background-color: transparent;
+  width: 83px;
+  text-align: inherit;
+  padding: 10px;
+  text-decoration: underline;
+  border-radius: 5px;
+  opacity: 0.7;
+  margin-left: 0%;
+}
+
+.error_explanation {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+div.profile {
+  color: white;
+  float: none; 
+  width: 50%; 
+  display: block;
+  font-weight: bold;
+}
+
+div.user_details {
+  color: white;
+  float: none; 
+  width: 20%; 
+  display: block;
+  font-weight: bold;
+  margin: 0px auto;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+ 
+nav {
+	display: inline-flex;
+	float: right;
+}
+
+a.large:link {
+  font-weight: bold;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity:0.7;    
+}
+
+a.large:hover {
+  background-color: #F4A460;
+}
+
+h1.headings {
+  font-size: 3em;
+  font-family: Arial;
+  color: white;
+  text-shadow: 2px 2px 4px #9E9191;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 50px;
+}
+
+.form_label {
+  color: white;
+  float: left; 
+  width: 10%; 
+  display: block;
+  font-weight: bold;
+}
+
+.sub_button {
+  -moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+  box-shadow:inset 0px 1px 0px 0px #a6827e;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
+  background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+  background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
+  background-color:#7d5d3b;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #54381e;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:13px;
+  padding:7px 40px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #4d3534;
+}
+
+.sub_button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
+  background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+  background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
+  background-color:#634b30;
+}
+
+.sub_button:active {
+  position:relative;
+  top:1px;
+}
+
+div.form_label {
+  color: white;
+  float: none; 
+  width: 10%; 
+  font-weight: bold;
+}
+
+a.middle:link {
+  font-weight: bold;
+  background-color: white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity:0.7;
+  margin: 0px auto;
+}
+
+a {
+	  font-weight: bolder;
+  color: blue;
+}
+
+nav.pagination {
+	color: white;
+}
+
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+.ui-menu {
+  border: 3px solid black;
+  border-radius: 5px;
+  color: black;
+  display: block;
+  float: left;
+  list-style: none outside none;
+  margin: 0;
+  padding: 2px;
+  background-color: white;
+}
+
+.ui-autocomplete {
+  cursor: default;
+  position: absolute;
+}
+
+.ui-menu .ui-menu-item{
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.ui-menu-item li
+        {
+            display: block;
+            padding: 3px 3px 3px 3px;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: green;
+}
+.ui-menu .ui-menu-item li:hover
+        {
+            display: block;
+            padding: 3px 3px 3px 3px;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            background-color: blue;
+}
