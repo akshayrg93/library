@@ -13,8 +13,11 @@ module CountryList
       "Argentina" ,
       "Italy" ,
     ]
+    
     country_list.each do |name|
-      Country.create( name: name)
-  end  
+      Country.create(name: name)
+    end
+  end
+  
 end
 
