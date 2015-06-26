@@ -4,7 +4,7 @@ development:
  database: da1sbk84c3urgo
  username: wrpntxtkbuiygn
  password:  7PHchDPS5u6_JO1rPjOGMZl77v
- host: 10.7.1.230
+ host: localhost
  port: 5432
 
 production:

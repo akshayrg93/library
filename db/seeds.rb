@@ -1,16 +1,8 @@
-country_list = [
-  "Germany" ,
-  "France",
-  "India",
-  "Netherlands",
-  "USA" ,
-  "England" ,
-  "Australia" ,
-  "Spain" ,
-  "Argentina" ,
-  "Italy" ,
-]
+require "seeds/country_list.rb"
+require "seeds/admin_info.rb"
 
-country_list.each do |name|
-  Country.create( name: name)
-end
+include CountryList
+include AdminInfo
+
+add_country_list
+add_admin_info
