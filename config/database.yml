@@ -7,15 +7,6 @@ development:
  host: 10.7.1.230
  port: 5432
 
-test:
- adapter: mysql2
- encoding: utf8
- database: library_test
- username: root
- password: qburst
- host: localhost
- port: 3306
-
 production:
  adapter: postgres
  encoding: utf8
