@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show     
+    Resque.enqueue(NewBooks, @user.id)
   end
 
   def new
@@ -31,9 +32,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)  
     if @user.save
-      #RegistrationMail.sample_email(@user).deliver_later!
+      Resque.enqueue(RegistrationMailer, @user.id)
       redirect_to logout_path, :flash => { :activation_required => "Successfully registered... Please wait for activation.." }
-
     else
       render :action => "new"
     end
