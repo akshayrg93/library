@@ -41,11 +41,12 @@ gem 'rails3-jquery-autocomplete'
 
 gem 'resque', :require => "resque/server"
 
-gem 'resque_mailer'
-
 gem 'redis'
 
-gem 'resque-scheduler', '~> 2.0.1'
+gem 'god'
+
+gem 'resque-scheduler'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

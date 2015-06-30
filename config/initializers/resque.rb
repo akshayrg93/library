@@ -1,6 +1,6 @@
 require 'resque/server'
-require 'resque_scheduler'
-require 'resque_scheduler/server'
+require 'resque/scheduler'
+require 'resque/scheduler/server'
 
 Resque::Scheduler.dynamic = true
 
@@ -16,4 +16,3 @@ config = {
   formatter:  Logger::Formatter.new,    # optional
 }
 
-Resque.logger_config = config

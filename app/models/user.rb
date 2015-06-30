@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
   scope :order_by_country_asc, -> { all.order("country ASC").where(role: false) }
   scope :order_by_country_desc, -> { all.order("country DESC").where(role: false) }
   scope :order_by_created, -> { all.order("created_at DESC").where(role: false) }
+  scope :activated_users, -> { where(activated: true) }
 end

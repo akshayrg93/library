@@ -1,5 +1,5 @@
 require 'resque/server'
-require 'resque_scheduler/server'
+require 'resque/scheduler/server'
 
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       put :get_book
     end
   end
+  
   resources :books do
     get :autocomplete_book_name, :on => :collection
   end
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   get 'users/buy_book/:id' => 'users#buy_book', as: 'user_buy_book'
   get 'books/buy_selected_books/:id' => 'books#buy_selected_books', as: 'buy_selected_books'
   get 'books/payment/:id1/:id2' => 'books#payment', as: 'payment'
+  
   post 'users/activate_user/:id' => 'users#activate_user', as: 'activate_user'
   post 'users/deactivate_user/:id' => 'users#deactivate_user', as: 'deactivate_user'
   # Example of named route that can be invoked with purchase_url(id: product.id)

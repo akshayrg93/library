@@ -1,7 +1,6 @@
-new_books_mail:
+send_new_books_mail:
   cron: "1 * * * * *"
-  queue: new_books_mail
+  queue: send_new_books_mail
   class: NewBooks
-  args: 
   description: Sent mail when new books are added
-  rails_envs: development, production, staging
+  rails_envs: development

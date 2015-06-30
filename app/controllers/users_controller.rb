@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def show     
-    Resque.enqueue(NewBooks, @user.id)
   end
 
   def new

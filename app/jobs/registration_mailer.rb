@@ -5,4 +5,4 @@ class RegistrationMailer
     @user = User.find(user_id)
     RegistrationMail.sample_email(@user).deliver!
   end
-end
+end 

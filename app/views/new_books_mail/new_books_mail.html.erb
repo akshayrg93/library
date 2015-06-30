@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.name %></h1>
+    <p>
+      Here are the list of new books available for sale !!!!
+    </p>
+    <% @books = Book.available_for_selling %>
+    <table>
+    <thead>
+     <tr>
+       <th>Name</th>
+       <th>Author</th>
+       <th>Language</th>
+       <th>Details</th>
+       <th>Price</th>
+      </tr>
+    </thead>
+    <% @books.each do |book| %>
+      <tbody>
+        <tr>
+          <td><%= book.name %></td>
+          <td><%= book.author %></td>
+          <td><%= book.language %></td>
+          <td><%= book.details %></td>
+          <td>Rs. <%= book.price %></td>  
+      </tbody>
+    <% end %>
+  </table>
+  </body>
+</html>
