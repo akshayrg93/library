@@ -30,8 +30,6 @@
   border-bottom: 1px solid #000000; 
 } 
 
-
-
 .datagrid table tbody td { 
   color: #000000; 
   border-left: 1px solid #000000;
@@ -39,7 +37,6 @@
   border-bottom: 1px solid #000000;
   font-weight: normal; 
 }
-
 
 .datagrid table tbody td:first-child { 
   border-left: none; 

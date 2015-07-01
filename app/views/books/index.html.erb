@@ -1,13 +1,11 @@
 <h1 class = "headings">Books List</h1>
 
-
-  <%= form_tag books_path, method: :get do %>
-    <p>
-      <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name', :data => { :no_matches_label => 'No matches found' }%>
-      <%= image_submit_tag("search.png", :class => "search_button")  %>
-    </p>
-  <% end %>
-
+<%= form_tag books_path, method: :get do %>
+  <p>
+    <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name', :data => { :no_matches_label => 'No matches found' }%>
+    <%= image_submit_tag("search.png", :class => "search_button")  %>
+  </p>
+<% end %>
 
 <div class = "datagrid">
   <table>
@@ -47,8 +45,8 @@
     <% end %>
   </table>
 </div>
-<br><%= paginate @books, :theme => 'twitter-bootstrap',
-                   :pagination_class => "pagination-small pagination-centered"%><br>
+
+<br><%= paginate @books%><br>
 
 <%= link_to 'New book', new_book_path, :class => "middle" %><br>
 <%= link_to 'Home', admin_home_path, :class => "middle" %>

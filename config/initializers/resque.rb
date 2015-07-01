@@ -15,4 +15,3 @@ config = {
   level:      Logger::DEBUG,            # optional
   formatter:  Logger::Formatter.new,    # optional
 }
-

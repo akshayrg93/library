@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   validates :phone, presence: true, numericality: { only_integer: true }, length: { is: 10 }	
   validates :state, presence: true
   validates :email, presence: true	
+  
   acts_as_authentic
+  
   has_many:books, :class_name => 'Book', :foreign_key => 'user_id'
 
   scope :order_by_name_asc, -> { all.order("name ASC").where(role: false) }

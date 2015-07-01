@@ -170,7 +170,7 @@ a.middle:link {
 }
 
 .submit {
-    font-weight: bold;
+  font-weight: bold;
   background-color: white;
   width: 85px;
   text-align: center;
@@ -277,5 +277,3 @@ form#new_book.new_book {
 .table_link:hover {
   background-color: #F4A460;
 }
-
-

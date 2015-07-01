@@ -18,60 +18,50 @@
 //= require jquery-ui
 //= require autocomplete-rails
 
-
-
-$(document).ready(function()
-{
+$(document).ready(function() {
+  
   var check_box = document.getElementsByClassName('activation_checkbox')
-for (var i = 0; i < check_box.length; i++) { 
+  for (var i = 0; i < check_box.length; i++) { 
     if (check_box[i].checked == false)
        check_box[i].parentNode.parentNode.style.backgroundColor = "rgb(213, 141, 141)";
-}
-  $('.delete_book').click(function(event)
-  { 
+  }
+
+  $('.delete_book').click(function(event) { 
+    
     var URL = $(this).attr('href');
-    $(this).closest('tr').find('td').fadeOut('fast', function(here)
-    { 
+    $(this).closest('tr').find('td').fadeOut('fast', function(here){ 
       $(here).parents('tr:first').remove();                    
     });    
-    $.ajax
-    ({
+    
+    $.ajax ({
     	 method: "DELETE",
        url: URL,
-       success: function(result)
-       {
+       success: function(result) {
          $("#books").html(result);
        }
     });    
     return false;
   });
 
-  $('#book_purchasable').click(function(){
+  $('#book_purchasable').click(function() {
     $('#purchasable').css('display', ($(this).is(':checked') ? 'block' : 'none'));
   });
-
 
   $(".user-row input[type='checkbox']").change(function(e) {
     var userRow = e.target.parentNode.parentNode;
     if ( e.target.checked ) {
       userRow.style.backgroundColor ="";
-      $.ajax
-      ({
+      $.ajax ({
         type: "POST",
         url: 'users/activate_user/' + $(this).val(),       
       });
     }  
     else {
       userRow.style.backgroundColor = "rgb(213, 141, 141)";
-      $.ajax
-      ({
+      $.ajax ({
         type: "POST",
         url: 'users/deactivate_user/' + $(this).val(),      
       });
-    } 
-     
+    }      
   });
-
-
 });
-

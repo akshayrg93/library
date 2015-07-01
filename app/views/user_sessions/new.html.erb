@@ -2,16 +2,17 @@
 <h2><font color="red"><%= flash[:fail] %></font></h2>
 <h2><font color="red"><%= flash[:not_activated] %></font></h2>
 <h2><font color="green"><%= flash[:activation_required] %></font></h2>
+
 <div class = "login_box">
   <%= form_for @user_session, :url => {:action => "create"} do |form| %>  
- 
-    <p>  <br><%= form.label :email, class: "form_label" %> 
+    <p>  
+    	<br><%= form.label :email, class: "form_label" %> 
       <%= form.text_field :email, class: "form_field" %><br><br>
-</p>
-      <%= form.label :password, class: "form_label" %> 
-      <%= form.password_field :password, class: "form_field" %><br><br>
-
-      <%= form.submit "Sign In", :class => "submit" %><br>  
+		</p>
+    <%= form.label :password, class: "form_label" %> 
+    <%= form.password_field :password, class: "form_field" %><br><br>
+    <%= form.submit "Sign In", :class => "submit" %><br>  
   <% end %>
 </div>
+
 <br><%= link_to 'Home', root_path, :class => "middle" %>

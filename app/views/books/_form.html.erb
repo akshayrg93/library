@@ -1,42 +1,41 @@
 <div class = "add_new_book" >
-<%= form_for @book do |f| %>
-  <p>
-    <%= f.label :name, class: 'form_label' %>
-    <%= f.text_field :name, class: 'form_field' %>
-  </p>
-
-  <p>
-    <%= f.label :author, class: 'form_label' %>
-    <%= f.text_field :author, class: 'form_field' %>
-  </p>
-
-  <p>
-    <%= f.label :language, class: 'form_label' %>
-    <%= f.text_field :language, class: 'form_field' %>
-  </p> 
-
-  <p>
-    <%= f.label :details, class: 'form_label' %>
-    <%= f.text_area :details, class: 'form_field', style: "width: 167px" %>
-  </p>
-
-  <p class="form_label">
-    For Sale? <%= f.check_box :purchasable, {checked: true} %>
-  </p>
-  <br><br><br>
-  <div id="purchasable">
+  <%= form_for @book do |f| %>
     <p>
-      <%= f.label :price, class: 'form_label' %>
-      <%= f.text_field :price, class: 'form_field' %>
+      <%= f.label :name, class: 'form_label' %>
+      <%= f.text_field :name, class: 'form_field' %>
+    </p>
+
+    <p>
+      <%= f.label :author, class: 'form_label' %>
+      <%= f.text_field :author, class: 'form_field' %>
+    </p>
+
+    <p>
+      <%= f.label :language, class: 'form_label' %>
+      <%= f.text_field :language, class: 'form_field' %>
     </p> 
+
     <p>
-      <%= f.label :no_of_copies, class: 'form_label' %>
-      <%= f.text_field :no_of_copies, class: 'form_field' %>
-    </p>  
-  </div>
-  
-  <p>
-    <%= f.submit :class => 'sub_button' %>
-  </p>
-<% end %>
+      <%= f.label :details, class: 'form_label' %>
+      <%= f.text_area :details, class: 'form_field', style: "width: 167px" %>
+    </p>
+
+    <p class="form_label">
+      For Sale? <%= f.check_box :purchasable, {checked: true} %>
+    </p>
+    <br><br><br>
+    <div id="purchasable">
+      <p>
+        <%= f.label :price, class: 'form_label' %>
+        <%= f.text_field :price, class: 'form_field' %>
+      </p> 
+      <p>
+        <%= f.label :no_of_copies, class: 'form_label' %>
+        <%= f.text_field :no_of_copies, class: 'form_field' %>
+      </p>  
+    </div>  
+    <p>
+      <%= f.submit :class => 'sub_button' %>
+    </p>
+  <% end %>
 </div>

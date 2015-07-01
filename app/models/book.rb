@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
   validates :no_of_copies, presence: true, :if => :for_sale?
   validates :price, numericality: { only_integer: true }, :if => :for_sale?
   validates :no_of_copies, numericality: { only_integer: true }, :if => :for_sale?
+  
   belongs_to :user, class_name: 'User', foreign_key: :user_id
   
   scope :order_by_name, -> { all.order("name") }
@@ -14,4 +15,3 @@ class Book < ActiveRecord::Base
   	purchasable == true
   end
 end
-

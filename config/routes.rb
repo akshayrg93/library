@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :books do
     get :autocomplete_book_name, :on => :collection
   end
+
   resources :user_sessions
 
   mount Resque::Server.new, at: "/resque"
@@ -40,8 +41,6 @@ Rails.application.routes.draw do
 
   # Example resource route with options:
   
-
-
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

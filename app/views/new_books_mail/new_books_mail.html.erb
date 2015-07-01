@@ -10,25 +10,26 @@
     </p>
     <% @books = Book.available_for_selling %>
     <table>
-    <thead>
-     <tr>
-       <th>Name</th>
-       <th>Author</th>
-       <th>Language</th>
-       <th>Details</th>
-       <th>Price</th>
-      </tr>
-    </thead>
-    <% @books.each do |book| %>
-      <tbody>
+      <thead>
         <tr>
-          <td><%= book.name %></td>
-          <td><%= book.author %></td>
-          <td><%= book.language %></td>
-          <td><%= book.details %></td>
-          <td>Rs. <%= book.price %></td>  
-      </tbody>
-    <% end %>
-  </table>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Language</th>
+          <th>Details</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <% @books.each do |book| %>
+        <tbody>
+          <tr>
+            <td><%= book.name %></td>
+            <td><%= book.author %></td>
+            <td><%= book.language %></td>
+            <td><%= book.details %></td>
+            <td>Rs. <%= book.price %></td>  
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
   </body>
 </html>
