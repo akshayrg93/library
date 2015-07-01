@@ -1,17 +1,56 @@
 <h1 class = "headings">Book Details</h1>
 
-<div class="form_label">
-  Name    : <%=  @book.name %><br>
-
-  Author : <%= @book.author %><br>
-
-  Language   : <%= @book.language %><br>
-
-  Details: <%= @book.details %><br>
-
-  Price: Rs. <%= @book.price %><br>
-
-  Number of copies: <%= @book.no_of_copies %><br>
+<div class="details">
+	<table>
+ 		<tr>
+ 			<td>
+ 				Name
+ 			</td>
+ 			<td>
+ 				:<%= @book.name %>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>
+ 				Author
+ 			</td>
+ 			<td>
+ 				:<%= @book.author %>
+ 			</td>
+ 		</tr>
+    <tr>
+    	<td>
+    		Language
+    	</td>
+    	<td>
+    		:<%= @book.language %>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		Details 
+    	</td>
+    	<td>
+    		:<%= @book.details %>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		Price
+    	</td>
+    	<td>
+    		:Rs. <%= @book.price %>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		Number of copies
+    	</td>
+    	<td>
+    		:<%= @book.no_of_copies %>
+    	</td>
+    </tr>
+ </table>
 </div>
 
-<%= link_to 'Back', books_path, :class => "middle" %>
+<br><%= link_to 'Back', books_path, :class => "middle" %>

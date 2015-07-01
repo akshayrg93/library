@@ -6,23 +6,59 @@
 <h2><font color="red"><%= flash[:failure] %></font></h2>
 <h2><font color="green"><%= flash[:bought_the_book] %></font></h2>
 
-<div class = "user_details">
-
-  Name    : <%=  @user.name %><br>
-
-  Address : <%= @user.address %><br>
-
-  Email   : <%= @user.email %><br>
-
-  Phone no: <%= @user.phone %><br>
-
-  State   : <%= @user.state %><br>
-
-  Country : <%= @user.country %><br>
+<div class="details">
+  <table>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        :<%= @user.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Address
+      </td>
+      <td>
+        :<%= @user.address %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Email
+      </td>
+      <td>
+        :<%= @user.email %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Phone 
+      </td>
+      <td>
+        :<%= @user.phone %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        State
+      </td>
+      <td>
+        :<%= @user.state %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Country
+      </td>
+      <td>
+        :<%= @user.country %>
+      </td>
+    </tr>
+ </table>
 </div>
   
-
-
 <% if @user.books.empty? %>
   <h2><font color="white">You have not taken any books</font></h2>
 <% else %>
@@ -47,7 +83,7 @@
           <tr>
             <td><%= book.name %></td>
             <td><%= book.author %></td>
-            <td><%= link_to 'Return', user_return_book_path(book.id), :class => "large" %></td>
+            <td><%= link_to 'Return', user_return_book_path(book.id), :class => "table_link" %></td>
           </tr>    
         </tbody>
       <% end %>

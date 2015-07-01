@@ -1,17 +1,48 @@
 <h1 class = "headings">Buy book</h1>
-<h2><font color="white">The selected book is:</font></h2>
 
-<div class="form_label">
-  Name    : <%=  @book.name %><br>
-
-  Author : <%= @book.author %><br>
-
-  Language   : <%= @book.language %><br>
-
-  Details: <%= @book.details %><br>
-
-  Number of copies: <%= @book.no_of_copies %><br>
-
+<div class="details">
+	<table>
+ 		<tr>
+ 			<td>
+ 				Name
+ 			</td>
+ 			<td>
+ 				:<%= @book.name %>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>
+ 				Author
+ 			</td>
+ 			<td>
+ 				:<%= @book.author %>
+ 			</td>
+ 		</tr>
+    <tr>
+    	<td>
+    		Language
+    	</td>
+    	<td>
+    		:<%= @book.language %>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		Details 
+    	</td>
+    	<td>
+    		:<%= @book.details %>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		Number of copies
+    	</td>
+    	<td>
+    		:<%= @book.no_of_copies %>
+    	</td>
+    </tr>
+ </table>
 </div>
 
 <%= form_tag buy_selected_books_path, method: :get do %>

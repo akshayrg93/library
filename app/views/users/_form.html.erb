@@ -1,3 +1,4 @@
+<div class = "registration_box">
 <%= form_for @user do |f| %>
   <p>
     <%= f.label :name, class: 'form_label' %> 
@@ -6,7 +7,7 @@
 
   <p> 
     <%= f.label :address, class: 'form_label' %> 
-    <%= f.text_area :address, class: 'form_field' %>
+    <%= f.text_area :address, class: 'form_field', style: "width: 167px" %>
   </p>
 
   <p>
@@ -43,5 +44,5 @@
     <br><%= f.submit :class => 'sub_button' %>
   </p>
 <% end %>
-
+</div>
 

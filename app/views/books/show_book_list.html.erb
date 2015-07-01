@@ -68,7 +68,7 @@
             <td><%= book.details %></td>
             <td>Rs.<%= book.price %></td>
             <td><%= book.no_of_copies %></td>
-            <td><%= link_to 'Buy', user_buy_book_path(book.id), :class => "large" %></td>
+            <td><%= link_to 'Buy', user_buy_book_path(book.id), :class => "table_link" %></td>
           </tr>
         </tbody>
       <% end %> 

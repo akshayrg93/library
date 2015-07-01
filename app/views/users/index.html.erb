@@ -35,7 +35,7 @@
           <td class = "user-row" ><%= user.state %></td>
           <td class = "user-row"><%= user.country %></td>
           <td class = "user-row"><%= check_box_tag 'user_id1', user.id, user.activated, :class => "activation_checkbox" %></td>
-          <td class = "user-row"><%= link_to 'Destroy', user_path(user), :class => "large", 
+          <td class = "user-row"><%= link_to 'Destroy', user_path(user), :class => "table_link", 
                                      method: :delete,
                                      data: { confirm: 'Are you sure?' }%></td>
         </tr>
@@ -44,4 +44,4 @@
   </table>
 </div>
 
-<%= link_to 'Home', admin_home_path, :class => "middle" %>
+<br><%= link_to 'Home', admin_home_path, :class => "middle" %>

@@ -5,13 +5,13 @@
 }
 
 .datagrid {
-  font: normal 12px/150% Arial, Helvetica, sans-serif; 
-  background: #fff; 
-  overflow: hidden; 
-  border: 1px solid #6E6E6E;
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 0px; 
+  font: normal 13px/150% Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.57);
+  overflow: hidden;
+  border: 1px solid #000000;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 3px;
 }
 
 .datagrid table td, .datagrid table th { 
@@ -19,19 +19,18 @@
 }
 
 .datagrid table thead th {
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #989E98), color-stop(1, #7F4614));
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, rgba(33, 37, 33, 0.61)), color-stop(1, #8B847E));
   background:-moz-linear-gradient( center top, #989E98 5%, #7F4614 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#989E98', endColorstr='#7F4614');
-  background-color:#989E98; 
+  background-color: rgba(219, 232, 219, 0); 
   color:#000000; 
   font-size: 16px; 
   font-weight: bold; 
-  border-left: 1px solid #000000; 
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000; 
 } 
 
-.datagrid table thead th:first-child { 
-  border: none; 
-}
+
 
 .datagrid table tbody td { 
   color: #000000; 
@@ -51,8 +50,8 @@
 }
 
 .datagrid table tfoot td div { 
-  border-top: 1px solid #30201B;
-  background: #87633F;
+  border-top: 1px solid #000000;
+  background: #73706B;
 } 
 
 .datagrid table tfoot td { 

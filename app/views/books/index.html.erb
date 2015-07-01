@@ -3,8 +3,8 @@
 
   <%= form_tag books_path, method: :get do %>
     <p>
-      <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name', :data => { :no_matches_label => 'No matches found' } %>
-      <%= submit_tag "Search", :name => nil %>
+      <%= autocomplete_field_tag :search, params[:search], autocomplete_book_name_books_path, :placeholder => 'Book name', :data => { :no_matches_label => 'No matches found' }%>
+      <%= image_submit_tag("search.png", :class => "search_button")  %>
     </p>
   <% end %>
 
@@ -39,15 +39,16 @@
           <td><%= book.details %></td>
           <td>Rs. <%= book.price %></td>
           <td><%= book.no_of_copies %></td>
-          <td><%= link_to 'Show', book_path(book), :class => "large"%></td>
-          <td><%= link_to 'Edit', edit_book_path(book), :class => "large"%></td>
-          <td><%= link_to 'Remove', book_path(book), :class => "large", :class => "delete_book", :method => :delete,data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to 'Show', book_path(book), :class => "table_link"%></td>
+          <td><%= link_to 'Edit', edit_book_path(book), :class => "table_link"%></td>
+          <td><%= link_to 'Remove', book_path(book), :class => "table_link", :method => :delete, data: {confirm: 'Are you sure?'} %></td>
         </tr>    
       </tbody>
     <% end %>
   </table>
 </div>
-<br><%= paginate @books %><br>
+<br><%= paginate @books, :theme => 'twitter-bootstrap',
+                   :pagination_class => "pagination-small pagination-centered"%><br>
 
 <%= link_to 'New book', new_book_path, :class => "middle" %><br>
 <%= link_to 'Home', admin_home_path, :class => "middle" %>
