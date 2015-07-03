@@ -47,6 +47,7 @@ gem 'god'
 
 gem 'resque-scheduler'
 
+gem 'capistrano'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

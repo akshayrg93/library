@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   before_filter :page_decider, except: [:admin_home]
   
   private
+  
   def page_decider
   	if current_user.present?
  			if admin_user?

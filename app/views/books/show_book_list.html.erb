@@ -1,6 +1,6 @@
 <h1 class = "headings">Books List</h1>
 
-<% if params[:type] == "lend" %>
+<% if params[:type] == "lend" or "" %>
   <h3><font color="green">You can take a maximum of 3 books</font></h3>
   <h3><font color="green">You took <%= current_user.book_count %> books</font></h3>
   <h2><font color="red"><%= flash[:failure] %></font></h2>

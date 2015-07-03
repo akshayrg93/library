@@ -57,6 +57,8 @@ class BooksController < ApplicationController
       @books = Book.available_for_lending
     elsif params[:type] == "buy"
       @books = Book.available_for_selling
+    else
+      @books = Book.available_for_lending
     end
   end
 
